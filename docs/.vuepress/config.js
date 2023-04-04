@@ -1,8 +1,11 @@
 module.exports = {
-    title: 'Vuepress',
+    title: '知识分享网（更新中...）',
     description: 'Just playing around',
     themeConfig: {
         nav: [
+            { text: 'Home', link: '/' },
+            { text: 'Guide', link: '/guide/', target:'_blank' },
+            { text: 'External', link: 'https://www.baidu.com' },
             {
                 text: 'Languages',
                 ariaLabel: 'Language Menu',
@@ -11,13 +14,16 @@ module.exports = {
                     { text: 'Japanese', link: '/language/japanese/' }
                 ]
             },
-            { text: 'Home', link: '/' },
-            { text: 'Guide', link: '/guide/', target:'_blank' },
-            { text: 'External', link: 'https://www.baidu.com' },
         ],
         sidebar: [
             {
-                title: '侧边栏一',
+                title: '简介',
+                children: [
+                    'jianjie/file1',
+                ],
+            },
+            {
+                title: 'Golang',
                 children: [
                     '/go/study',
                     {
@@ -54,7 +60,7 @@ module.exports = {
                 ],
             },
             {
-                title: '侧边栏二',
+                title: 'gRPC',
                 children: [
                     'grpc/development',
                     'grpc/support',
