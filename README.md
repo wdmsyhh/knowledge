@@ -13,6 +13,8 @@
     ```
     cd docs/.vuepress
 
+    yarn docs:build
+
     docker build -t nginxwithdist .
 
     docker run --name kb -p 8000:80 -itd nginxwithdist
