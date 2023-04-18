@@ -2,7 +2,7 @@
 
 ## ChatGPT
 
-- 试用地址：[点我](http://www.get123.xyz:1000)
+- 试用地址：[点我](http://gpt.get123.xyz)
 
 - 自己搭建 ChatGPT：
 
