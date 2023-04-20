@@ -24,5 +24,3 @@
     注意上面的 OPENAI_API_KEY 的值替换成自己在 openai 官网创建的 key。没有的话去创建一个 [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
     容器运行起来后访问：[8.219.xxx.xxx:1000](8.219.xxx.xxx:1000)
     :::
-
-## 测试 jenkins hahahah

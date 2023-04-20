@@ -1,5 +1,5 @@
 module.exports = {
-    title: '知识分享网（更新中...）',
+    title: '笔记（更新中...）',
     description: 'Just playing around',
     themeConfig: {
         nav: [
@@ -65,6 +65,12 @@ module.exports = {
                     'grpc/development',
                     'grpc/support',
                     'grpc/tools',
+                ],
+            },
+            {
+                title: 'Docker',
+                children: [
+                    'docker/安装',
                 ],
             },
         ]
