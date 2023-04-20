@@ -7,11 +7,11 @@ module.exports = {
             { text: 'Guide', link: '/guide/', target:'_blank' },
             { text: 'External', link: 'https://www.baidu.com' },
             {
-                text: 'Languages',
-                ariaLabel: 'Language Menu',
+                text: '收录',
+                ariaLabel: '收录 Menu',
                 items: [
-                    { text: 'Chinese', link: '/language/chinese/' },
-                    { text: 'Japanese', link: '/language/japanese/' }
+                    { text: 'Go', link: '/收录/go/' },
+                    { text: 'gRPC', link: '/收录/gRPC/' }
                 ]
             },
         ],
