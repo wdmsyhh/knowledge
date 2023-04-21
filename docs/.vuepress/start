@@ -4,7 +4,6 @@ docker build -t nginxwithdist .
 
 # 检查容器是否存在
 if sudo docker ps -a | grep -q "kb"; then
-    docker stop kb
-    docker rm kb
+    docker rm -f kb
 fi
 docker run --name kb -p 8000:80 -itd nginxwithdist

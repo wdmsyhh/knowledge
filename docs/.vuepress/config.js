@@ -19,7 +19,7 @@ module.exports = {
             {
                 title: '简介',
                 children: [
-                    'jianjie/file1',
+                    'profile/profile',
                 ],
             },
             {
@@ -71,6 +71,12 @@ module.exports = {
                 title: 'Docker',
                 children: [
                     'docker/安装',
+                ],
+            },
+            {
+                title: 'Nginx',
+                children: [
+                    'nginx/reverseProxy',
                 ],
             },
         ]
