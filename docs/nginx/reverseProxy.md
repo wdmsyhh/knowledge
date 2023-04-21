@@ -47,6 +47,12 @@ server {
 }
 ```
 
+修改配置后执行：
+```shell
+nginx -s reload
+```
+或者退出容器重启容器
+
 我的简单实践：
 ```
 server {
