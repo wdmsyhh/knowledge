@@ -86,6 +86,12 @@ module.exports = {
                     'jenkins/other',
                 ],
             },
+            {
+                title: '阿里云',
+                children: [
+                    'aliyun/域名',
+                ],
+            },
         ]
     },
 }
