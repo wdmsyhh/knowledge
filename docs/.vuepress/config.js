@@ -79,6 +79,13 @@ module.exports = {
                     'nginx/reverseProxy',
                 ],
             },
+            {
+                title: 'Jenkins',
+                children: [
+                    'jenkins/install',
+                    'jenkins/other',
+                ],
+            },
         ]
     },
 }

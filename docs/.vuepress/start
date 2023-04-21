@@ -6,4 +6,5 @@ docker build -t nginxwithdist .
 if sudo docker ps -a | grep -q "kb"; then
     docker rm -f kb
 fi
+
 docker run --name kb -p 8000:80 -itd nginxwithdist
