@@ -1,4 +1,5 @@
 module.exports = {
+    plugins: ['@vuepress/medium-zoom'],
     title: '笔记（更新中...）',
     description: 'Just playing around',
     themeConfig: {
