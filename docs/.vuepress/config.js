@@ -26,7 +26,7 @@ module.exports = {
             {
                 title: 'Golang',
                 children: [
-                    '/go/study',
+                    '/go/install',
                     {
                         title: '侧边栏一(1)',
                         children: [
