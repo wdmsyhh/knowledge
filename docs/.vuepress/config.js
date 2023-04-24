@@ -26,6 +26,7 @@ module.exports = {
             {
                 title: 'Golang',
                 children: [
+                    'go/readings.md',
                     '/go/install',
                     {
                         title: '侧边栏一(1)',
@@ -50,7 +51,6 @@ module.exports = {
                             'go/share/sessions',
                         ],
                     },
-                    'go/readings.md',
                     {
                         title: '开发',
                         children: [
@@ -63,9 +63,9 @@ module.exports = {
             {
                 title: 'gRPC',
                 children: [
-                    'grpc/development',
-                    'grpc/support',
-                    'grpc/tools',
+                    'grpc/install',
+                    'grpc/use',
+                    'grpc/grpc-gateway',
                 ],
             },
             {
