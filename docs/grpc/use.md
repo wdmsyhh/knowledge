@@ -2,7 +2,7 @@
 
 - 新建项目 `grpcdemo` 并创建 `grpcdemo/proto/hello.proto`
 
-```proto
+```shell
 syntax = "proto3";
 
 package grpcdemo.hello;
@@ -21,10 +21,6 @@ message StringMessage {
 message User {
   string userName = 1;
 }
-
-service HelloService {
-  rpc Hello (StringMessage) returns (StringMessage);
-}
 ```
 
 执行命令生成 go 文件：
@@ -34,7 +30,7 @@ protoc --go_out=. ./proto/hello.proto
 
 - 定义服务，`grpcdemo/proto/hello.proto` 文件中添加 HelloService
 
-```proto
+```shell
 syntax = "proto3";
 
 package grpcdemo.hello;
@@ -68,7 +64,7 @@ protoc --go_out=plugins=grpc:. ./proto/hello.proto
 
 `grpcdemo/proto/hello.proto`：
 
-```proto
+```shell
 syntax = "proto3";
 
 package grpcdemo.hello;
@@ -91,7 +87,7 @@ message User {
 
 `grpcdemo/proto/service.proto`：
 
-```proto
+```shell
 syntax = "proto3";
 
 package grpcdemo.hello;
