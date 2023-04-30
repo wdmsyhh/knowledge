@@ -24,6 +24,12 @@ module.exports = {
                 ],
             },
             {
+                title: '系统',
+                children: [
+                    'system/ubuntu',
+                ],
+            },
+            {
                 title: 'Golang',
                 children: [
                     'go/readings.md',
