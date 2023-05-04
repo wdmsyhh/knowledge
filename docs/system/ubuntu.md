@@ -36,7 +36,7 @@ wget http://cdn2.ime.sogou.com/dl/index/1571302197/sogoupinyin_2.3.1.0112_amd64.
 
 ```shell
 sudo dpkg -i sogoupinyin_2.3.1.0112_amd64.deb
- 
+
 # 如果安装失败，请执行如下命令安装依赖，然后再执行上面的安装命令
 sudo apt -f install
 ```
@@ -52,6 +52,8 @@ sudo apt -f install
     ![](./images/image3.png)
 
 - 至此，应该就可以使用搜狗输入法了。
+
+
 
 ## 安装 VScode
 
@@ -73,4 +75,39 @@ Ubuntu 的应用市场安装的 VSCode 是 snap 的削减版本，不支持中�
 
 ```shell
 sudo dpkg -i xxxxx
+```
+
+## 磁盘清理
+
+- 进入根路径。
+```shell
+cd /
+```
+
+- 查看磁盘挂载和占用情况。
+
+```shell
+df -hl
+```
+
+- 排查哪些目录占用空间较大。
+
+```shell
+du -h --max-depth=1
+```
+![](./images/image4.png)
+
+- 继续进入较大的目录执行如上命令。
+
+![](./images/image5.png)
+
+- 所有文件从大到小展示。
+```shell
+ls -lhS
+```
+![](./images/image6.png)
+
+- 清空日志。
+```shell
+sudo truncate -s 0 /var/log/syslog.1
 ```
