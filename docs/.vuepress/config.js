@@ -1,5 +1,20 @@
 module.exports = {
-    plugins: ['@vuepress/medium-zoom'],
+    plugins: [
+        '@vuepress/medium-zoom',
+        [
+            '@vssue/vuepress-plugin-vssue',
+            {
+                platform: 'github',
+                // 存储 issue 和评论的库的所有者名称。
+                owner: 'wdmsyhh',
+                // 用于存储 issue 和评论的存储库的名称。
+                repo: 'comment',
+                // 从 OAuth2 规范中引入的 clientId 和 clientSecret。
+                clientId: '6502126dfc77629a758a',
+                clientSecret: 'fd8e05162dd7a178faac9b79e7f3221fbcc20802',
+            },
+        ]
+    ],
     title: '笔记（更新中...）',
     description: 'Just playing around',
     themeConfig: {
