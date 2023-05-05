@@ -1,10 +1,86 @@
 # Ubuntu18.04 系统配置
 
+## 科学上网
+
+### 方式一
+
+- 购买墙外服务器，如新加坡服务器（可以在阿里云购买按量付费 ECS 服务器，很便宜）。
+
+- 创建 proxy 文件，写入如下内容。
+
+```shell
+#! /bin/bash -e
+
+main() {
+if [ -z $2 ]; then
+    usage
+fi
+if [ -z $3 ]; then
+    usage
+fi
+case "$1" in
+    start)
+      trap 'onCtrlC' INT
+      function onCtrlC () {
+          echo -e '\nCtrl+C is captured'
+          gsettings set org.gnome.system.proxy mode 'none'
+      }
+      gsettings set org.gnome.system.proxy mode 'manual'
+      sshpass -p $3 ssh -ND 1080 root@$2
+    ;;
+    down)
+      gsettings set org.gnome.system.proxy mode 'none'
+    ;;
+    *)
+      usage
+    ;;
+  esac
+}
+
+usage() {
+  echo "Scientific Internet Access"
+  echo "USAGE: $0 option"
+  echo -e "\nOptions:"
+  echo "    start [墙外服务器 IP] [墙外服务器 Password]"
+  echo "    down"
+  echo "Ctrl+C can also close agent"
+  exit 1
+}
+
+main $@
+```
+
+- 赋予可执行权限。
+
+```shell
+chmod 777 proxy
+```
+
+- 安装 sshpass（用于直接输入密码）。
+
+```shell
+sudo apt-get install sshpass
+```
+
+- 打开终端，执行脚本。
+
+```shell
+./proxy start ${服务器 ip} ${服务器 password}
+```
+然后访问 Google，成功。
+
+- 关闭科学上网代理。
+
+    - 方式一：在终端按 Ctrl+C。
+    - 方式二：执行 `./proxy down`。
+    - 方式三：直接点击终端右上角的 x 关闭，但是记得要去设置中把网络代理改成禁用，因为你在执行 `./proxy start ${服务器 ip} ${服务器 password}` 的时候会自动把代理改成手动，这里要关闭，不然上不了网。
+
+
 ## 搜狗输入法安装
 
 :::tip
-Win11 + Ubuntu18.04双系统
-如果按照按照官网的教程直接安装，大概率安装好以后是无法使用的，可尝试如下方法修复。
+我的是 Win11 + Ubuntu18.04双系统
+如果按照按照官网的教程直接安装，大概率安装好以后是无法使用的，可尝试如下方法修复。虚拟机或 Ubuntu 单系统也可参考。
 :::
 
 - 先卸载掉fcitx，及其所有相关的软件。
@@ -111,3 +187,9 @@ ls -lhS
 ```shell
 sudo truncate -s 0 /var/log/syslog.1
 ```
+
+--------------
+<br><br><br>
+ <template>
+  <Vssue :issue-id="2" />
+</template>
