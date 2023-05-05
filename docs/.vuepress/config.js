@@ -6,7 +6,7 @@ module.exports = {
             {
                 platform: 'github',
                 owner: 'wdmsyhh',
-                repo: 'knowledge',
+                repo: 'comment',
                 clientId: '6502126dfc77629a758a',
                 clientSecret: 'fd8e05162dd7a178faac9b79e7f3221fbcc20802',
             },
