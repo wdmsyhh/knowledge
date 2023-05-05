@@ -26,13 +26,7 @@
     :::
 
 
-----
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
  <template>
   <Vssue :issue-id="1" />
 </template>
