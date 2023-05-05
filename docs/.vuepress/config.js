@@ -42,6 +42,12 @@ module.exports = {
                 ],
             },
             {
+                title: '前端',
+                children: [
+                    '前端/vue',
+                ],
+            },
+            {
                 title: 'Golang',
                 children: [
                     'go/readings.md',
