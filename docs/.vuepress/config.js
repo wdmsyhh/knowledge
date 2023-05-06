@@ -29,12 +29,7 @@ module.exports = {
             },
         ],
         sidebar: [
-            {
-                title: '简介',
-                children: [
-                    'profile/profile',
-                ],
-            },
+            'profile',
             {
                 title: '系统',
                 children: [
