@@ -1,7 +1,7 @@
 # 使用
 
 :::tip
-以下内容源码：[https://github.com/wdmsyhh/grpcdemo](https://github.com/wdmsyhh/grpcdemo)
+获取以下内容源码：`git clone git@github.com:wdmsyhh/grpcdemo.git`
 :::
 
 - 新建项目 `grpcdemo` 并创建 `grpcdemo/proto/hello.proto`

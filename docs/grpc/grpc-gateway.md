@@ -10,8 +10,11 @@ sidebarDepth: 2
 
 - 方式 1：
 
-在 [grpcdemo](https://github.com/wdmsyhh/grpcdemo)（只要是 go module 项目就可以） 项目目录中执行：
-```
+```shell
+# 可以自己新建一个 go module 的项目
+git clone git@github.com:wdmsyhh/grpcdemo.git
+cd grpcdemo
+# 在任何 go mudule 项目下执行都可
 go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway@v1.10.0
 ```
 会直接生成 protoc-gen-grpc-gateway 可执行文件到 GOBIN 目录
@@ -58,7 +61,7 @@ http:
 protoc --grpc-gateway_out=. --grpc-gateway_opt grpc_api_configuration=./proto/api.yaml ./proto/service.proto
 ```
 
-### 测试 http 接口
+### 添加 gateway 服务
 
 修改 `grpcdemo/service/main.go` 文件如下：
 
@@ -117,7 +120,7 @@ cd service
 go run main.go
 ```
 
-- 访问接口
+### 访问接口
 
 [http://localhost:8080/v1/example/hello/get](http://localhost:8080/v1/example/hello/get)
 :::tip

@@ -52,36 +52,36 @@ module.exports = {
                 children: [
                     'go/readings.md',
                     '/go/install',
-                    {
-                        title: '侧边栏一(1)',
-                        children: [
-                            'go/training/',
-                            'go/training/basics',
-                            {
-                                title: '项目知识',
-                                children: [
-                                    'go/training/project/',
-                                    'go/training/project/frontend',
-                                    'go/training/project/blogrpc',
-                                    'go/training/project/vue',
-                                ],
-                            },
-                        ],
-                    },
-                    {
-                        title: '知识分享',
-                        children: [
-                            'go/share/',
-                            'go/share/sessions',
-                        ],
-                    },
-                    {
-                        title: '开发',
-                        children: [
-                            'go/shanghai/remote.md',
-                            'go/shanghai/performance',
-                        ],
-                    },
+                    // {
+                    //     title: '侧边栏一(1)',
+                    //     children: [
+                    //         'go/training/',
+                    //         'go/training/basics',
+                    //         {
+                    //             title: '项目知识',
+                    //             children: [
+                    //                 'go/training/project/',
+                    //                 'go/training/project/frontend',
+                    //                 'go/training/project/blogrpc',
+                    //                 'go/training/project/vue',
+                    //             ],
+                    //         },
+                    //     ],
+                    // },
+                    // {
+                    //     title: '知识分享',
+                    //     children: [
+                    //         'go/share/',
+                    //         'go/share/sessions',
+                    //     ],
+                    // },
+                    // {
+                    //     title: '开发',
+                    //     children: [
+                    //         'go/shanghai/remote.md',
+                    //         'go/shanghai/performance',
+                    //     ],
+                    // },
                 ],
             },
             {
@@ -108,7 +108,6 @@ module.exports = {
                 title: 'Jenkins',
                 children: [
                     'jenkins/install',
-                    'jenkins/other',
                 ],
             },
             {
