@@ -48,7 +48,7 @@ module.exports = {
                     'go/readings.md',
                     '/go/install',
                     // {
-                    //     title: '侧边栏一(1)',
+                    //     title: '侧边栏一',
                     //     children: [
                     //         'go/training/',
                     //         'go/training/basics',
@@ -56,25 +56,9 @@ module.exports = {
                     //             title: '项目知识',
                     //             children: [
                     //                 'go/training/project/',
-                    //                 'go/training/project/frontend',
                     //                 'go/training/project/blogrpc',
-                    //                 'go/training/project/vue',
                     //             ],
                     //         },
-                    //     ],
-                    // },
-                    // {
-                    //     title: '知识分享',
-                    //     children: [
-                    //         'go/share/',
-                    //         'go/share/sessions',
-                    //     ],
-                    // },
-                    // {
-                    //     title: '开发',
-                    //     children: [
-                    //         'go/shanghai/remote.md',
-                    //         'go/shanghai/performance',
                     //     ],
                     // },
                 ],
@@ -82,9 +66,22 @@ module.exports = {
             {
                 title: 'gRPC',
                 children: [
-                    'grpc/install',
-                    'grpc/use',
-                    'grpc/grpc-gateway',
+                    {
+                        title: '老版本',
+                        children: [
+                            'grpc/old/install',
+                            'grpc/old/use',
+                            'grpc/old/grpc-gateway',
+                        ],
+                    },
+                    {
+                        title: '新版本',
+                        children: [
+                            'grpc/new/install',
+                            'grpc/new/use',
+                            'grpc/new/grpc-gateway',
+                        ],
+                    }
                 ],
             },
             {
@@ -109,6 +106,7 @@ module.exports = {
                 title: '阿里云',
                 children: [
                     'aliyun/域名',
+                    'aliyun/容器镜像服务',
                 ],
             },
         ]
