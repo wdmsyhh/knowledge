@@ -1,5 +1,9 @@
 # 使用
 
+:::tip
+以下内容源码：[https://github.com/wdmsyhh/grpcdemo](https://github.com/wdmsyhh/grpcdemo)
+:::
+
 - 新建项目 `grpcdemo` 并创建 `grpcdemo/proto/hello.proto`
 
 ```shell
@@ -109,10 +113,10 @@ protoc --go_out=plugins=grpc:. ./proto/*.proto
 
 ### 启动 gRPC 服务
 
-- 新建 `grpcdemo/service/hello.go`，方法实现了生成的 go 文件中接口
+- 新建 `grpcdemo/service/hello/hello.go`，HelloServiceImpl 实现了生成的 go 文件中接口
 
 ```go
-package main
+package hello
 
 import (
 	"context"
@@ -130,7 +134,7 @@ func (p *HelloServiceImpl) Hello(ctx context.Context, args *hello.StringMessage)
 - 新建 `grpcdemo/service/main.go`，并启动服务，监听端口为 1234
 
 ```go
-package main
+package hello
 
 import (
 	"google.golang.org/grpc"
@@ -151,7 +155,7 @@ func main() {
 }
 ```
 
-- 客户端访问，新建 `grpcdemo/main.go`
+- 客户端访问，新建 `grpcdemo/client/main.go`
 
 ```go
 package main
@@ -180,4 +184,4 @@ func main() {
 }
 ```
 
-执行 `go run main.go` 查看调用服务结果
+进入 `client` 目录，执行 `go run main.go` 查看调用服务结果。
