@@ -16,17 +16,17 @@ module.exports = {
     description: 'Just playing around',
     themeConfig: {
         nav: [
-            { text: 'Home', link: '/' },
-            { text: 'Guide', link: '/guide/', target:'_blank' },
-            { text: 'External', link: 'https://www.baidu.com' },
-            {
-                text: '收录',
-                ariaLabel: '收录 Menu',
-                items: [
-                    { text: 'Go', link: '/收录/go/' },
-                    { text: 'gRPC', link: '/收录/gRPC/' }
-                ]
-            },
+            { text: '【Home】', link: '/' },
+            // { text: 'Guide', link: '/guide/', target:'_blank' },
+            // { text: 'External', link: 'https://www.baidu.com' },
+            // {
+            //     text: '收录',
+            //     ariaLabel: '收录 Menu',
+            //     items: [
+            //         { text: 'Go', link: '/收录/go/' },
+            //         { text: 'gRPC', link: '/收录/gRPC/' }
+            //     ]
+            // },
         ],
         sidebar: [
             'profile',
