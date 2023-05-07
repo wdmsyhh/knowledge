@@ -33,6 +33,7 @@ module.exports = {
             {
                 title: '系统',
                 children: [
+                    'system/linux',
                     'system/ubuntu',
                 ],
             },

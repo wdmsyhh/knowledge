@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux 基本操作 | 笔记（更新中...）</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.b87de1cc.css" as="style"><link rel="preload" href="/assets/js/app.6e485eb9.js" as="script"><link rel="preload" href="/assets/js/2.7e7909cb.js" as="script"><link rel="preload" href="/assets/js/29.da71ed1a.js" as="script"><link rel="prefetch" href="/assets/js/10.d41557a6.js"><link rel="prefetch" href="/assets/js/11.6698d337.js"><link rel="prefetch" href="/assets/js/12.aa1c8d93.js"><link rel="prefetch" href="/assets/js/13.1ce183ae.js"><link rel="prefetch" href="/assets/js/14.036c54a9.js"><link rel="prefetch" href="/assets/js/15.8f575287.js"><link rel="prefetch" href="/assets/js/16.d72c7cca.js"><link rel="prefetch" href="/assets/js/17.7b931711.js"><link rel="prefetch" href="/assets/js/18.cef2b25c.js"><link rel="prefetch" href="/assets/js/19.f55af2d5.js"><link rel="prefetch" href="/assets/js/20.f7502727.js"><link rel="prefetch" href="/assets/js/21.4c67a40c.js"><link rel="prefetch" href="/assets/js/22.ac6aa239.js"><link rel="prefetch" href="/assets/js/23.3dbedbd7.js"><link rel="prefetch" href="/assets/js/24.7348755e.js"><link rel="prefetch" href="/assets/js/25.338760b2.js"><link rel="prefetch" href="/assets/js/26.478d9bd2.js"><link rel="prefetch" href="/assets/js/27.64768116.js"><link rel="prefetch" href="/assets/js/28.d3536978.js"><link rel="prefetch" href="/assets/js/3.3975b9b8.js"><link rel="prefetch" href="/assets/js/30.74c2379e.js"><link rel="prefetch" href="/assets/js/31.ee32a6ed.js"><link rel="prefetch" href="/assets/js/32.8c7fb9e2.js"><link rel="prefetch" href="/assets/js/4.96d4e794.js"><link rel="prefetch" href="/assets/js/5.eaaef29d.js"><link rel="prefetch" href="/assets/js/6.56ddf93f.js"><link rel="prefetch" href="/assets/js/7.001335bc.js"><link rel="prefetch" href="/assets/js/8.1dfff120.js"><link rel="prefetch" href="/assets/js/9.a5c355ca.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b87de1cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">笔记（更新中...）</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  【Home】
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  【Home】
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/profile.html" class="sidebar-link">简介</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>系统</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/system/linux.html" aria-current="page" class="active sidebar-link">Linux 基本操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/system/linux.html#vim" class="sidebar-link">Vim</a></li></ul></li><li><a href="/system/ubuntu.html" class="sidebar-link">Ubuntu18.04 系统配置</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Golang</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>gRPC</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Docker</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Nginx</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Jenkins</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>阿里云</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="linux-基本操作"><a href="#linux-基本操作" class="header-anchor">#</a> Linux 基本操作</h1> <h2 id="vim"><a href="#vim" class="header-anchor">#</a> Vim</h2> <ul><li>预备知识（三种模式介绍）</li></ul> <p>基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底行命令模式（Last line mode）。 这三种模式的作用分别是：
+一般/ 命令模式(Normal mode)：Vim 启动后，默认进入命令模式。在此模式下，我们可以 控制屏幕光标的移动，字符、字或行的删除，移动复制某区段及进入Insert mode下，或者到 last line mode下
+输入模式(Insert mode)：只有在此模式下我们可以编辑文本内容。在命令模式下按 <code>i、 a 、o</code>等键可以进入输入模式， 按「ESC」键可回到命令行模式
+底行模式（Last line mode）： 在命令模式下，<code>shift+:</code> 即可进入底行模式。这时光标会移到屏幕底部，在这里可以输入相关指令进行 文件保存或退出，也可以进行文件替换，找字符串，列出行号等操作。</p> <ul><li>三种模式的相互切换：</li></ul> <p>[正常模式]切换至[插入（输入）模式]： 可以输入<code>i、a、o</code>任意一键切换（但三种按键进入的插入模式对应的效果不一样，下文会介绍）
+[ 正常模式 ] 切换至 [底行 模式]：  按下<code>shift + :</code>, 其实就是输入 <code>:</code>
+切换至 [正常模式]： 在任何模式下，都可以按 <code>Esc</code> 键返回到命令模式，可以多按几次 <code>Esc</code> 键，保证顺利返回到命令模式。</p> <ul><li>退出 vim 及保存文件，在底行模式下输入 。</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#（保存当前文件）</span>
+w 
+<span class="token comment">#(输入「wq」,保存文件并退出vim)</span>
+wq 
+<span class="token comment">#(输入q!,不存盘强制退出vim)</span>
+q<span class="token operator">!</span> 
+</code></pre></div><ul><li>进入插入模式。</li></ul> <p>按「a」进入插入模式后，是从目前光标所在位置的下一个位置开始输入文字</p> <p>按「i」切换进入插入模式「insert mode」，按“i”进入插入模式后是从光标当前位置开始输入文件</p> <p>按「o」进入插入模式后，是插入新的一行，从行首开始输入文字</p> <ul><li>移动光标。</li></ul> <p>vim可以直接用键盘上的光标来上下左右移动，但正规的vim是用小写英文字母「h」「j」「k」、「l」，分别控制光标左、下、上、右移一格</p> <p>按［ gg］或［ngg］：进入到文本首行或者跳转到第n行</p> <p>按「shift+g (G)」或［nG］：移动到文章的最后或跳转到第n行</p> <p>按「shift+4 ($) 」：移动到光标所在行的行尾</p> <p>按「shift+6 (^)」：移动到光标所在行的行首</p> <p>按「w」：光标跳到下个字的开头</p> <p>按「e 」：光标跳到下个字的字尾</p> <p>按「b 」：光标跳到上个字的开头</p> <p>按「 nl 」：光标移到该行的第n 个位置</p> <p>按「 ctrl + b 」：屏幕往 “ 后 ” 移动一页</p> <p>按「 ctrl + f 」：屏幕往 “ 前 ” 移动一页</p> <p>按「 ctrl +u 」：屏幕往 “ 后 ” 移动半页</p> <p>按「 ctrl + d 」：屏幕往 “ 前 ” 移动半页</p> <ul><li>删除文字
+按「x」或「nx」：每按一次，删除光标所在位置的一个字符或删除包括光标所在位置及其后面的n个字符</li></ul> <p>按「X」或「nX」：大写的X，每按一次，删除光标所在位置的前面一个字符或删除光标位置之前的n个字符</p> <p>按「dd」或「ndd」：对当前行或者当前行在内的n行内容进行删除操作（搭配p可进行剪切操作）</p> <ul><li>复制
+按「yw」或「nyw」：将光标所在之处到字尾的字符（或指定n个光标后的字符）复制到缓冲区中</li></ul> <p>按「yy」或「nyy」 ：复制当前行或者复制当前行所在的指定若干行</p> <p>按「p」：将缓冲区内的字符贴到光标所在位置；注意：所有与“y”有关的复制命令都必须与“p”配合才能完成复制与粘贴功能。</p> <p>按「dd+p」:进行剪切操作 ，只按「dd」等于删除</p> <ul><li>替换
+按「r」或「nr」：替换光标所在处的字符；</li></ul> <p>按「R」：替换光标所到之处的字符，直到按下「ESC」键为止；</p> <p>按「shift+~」：实现大小写转换</p> <ul><li>跳至指定的行
+按「ctrl+g」列出光标所在行的行号；</li></ul> <p>按「nG」：例如，「15G」，表示移动光标至文章的第15行行首.</p> <ul><li>撤销上一次操作</li></ul> <p>按「u」：撤销刚才的操作，回到上一个操作。按多次“u”可以执行多次撤销；</p> <p>「ctrl + r」: 对撤销的恢复</p> <ul><li>更改内容</li></ul> <p>按「cw」：更改光标所在处的字到字尾处</p> <p>按「cnw」：例如，「c3w」表示更改3个字</p> <ul><li><p>vim底行模式下命令集</p></li> <li><p>列出行号</p></li></ul> <p>「set nu」: 输入「set nu」后，会在文件中的每一行前面列出行号</p> <ul><li>跳到文件中的某一行</li></ul> <p>「n」: 在冒号后输入一个数字，再按回车键就会跳到该行了，如输入数字15，再回车，就会跳到文章的第15行</p> <ul><li>查找字符</li></ul> <p>「/关键字」: 先按「/」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按 「n」会往后寻找到您要的关键字为止。</p> <p>「?关键字」：先按「?」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往前寻找到您要的关键字为止。</p> <ul><li>保存文件并退出</li></ul> <p>「w」: 在冒号输入字母「w」就可以将文件保存起来</p> <p>「q」：按「q」就是退出，如果无法离开vim，可以在「q」后跟一个「!」强制离vim</p> <p>「wq」：一般建议离开时，搭配「w」一起使用，这样在退出的时候还可以保存文件</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/profile.html" class="prev">
+        简介
+      </a></span> <span class="next"><a href="/system/ubuntu.html">
+        Ubuntu18.04 系统配置
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6e485eb9.js" defer></script><script src="/assets/js/2.7e7909cb.js" defer></script><script src="/assets/js/29.da71ed1a.js" defer></script>
+  </body>
+</html>
