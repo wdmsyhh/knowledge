@@ -35,6 +35,7 @@ module.exports = {
                 children: [
                     'system/linux',
                     'system/ubuntu',
+                    'system/windows',
                 ],
             },
             {
