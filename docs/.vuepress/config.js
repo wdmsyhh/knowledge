@@ -109,6 +109,7 @@ module.exports = {
                 children: [
                     'aliyun/域名',
                     'aliyun/容器镜像服务',
+                    'aliyun/公网IP',
                 ],
             },
         ]
