@@ -124,3 +124,24 @@ vim可以直接用键盘上的光标来上下左右移动，但正规的vim是�
 「q」：按「q」就是退出，如果无法离开vim，可以在「q」后跟一个「!」强制离vim
 
 「wq」：一般建议离开时，搭配「w」一起使用，这样在退出的时候还可以保存文件
+
+
+## 查询当前 Linux 系统的信息
+
+- 查询当前 Linux 系统的信息，包括内核版本、主机名、操作系统
+```shell
+uname -a
+```
+
+- 查询当前 Linux 系统的版本（例如 Ubuntu 的版本是 18.04 或 20.04）
+
+先安装命令
+```shell
+sudo apt-get update
+sudo apt-get install -y lsb-release
+```
+
+查询
+```shell
+lsb_release -a
+```
