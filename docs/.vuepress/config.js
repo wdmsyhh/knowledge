@@ -39,6 +39,12 @@ module.exports = {
                 ],
             },
             {
+                title: '开发工具',
+                children: [
+                    '开发工具/vscode',
+                ],
+            },
+            {
                 title: '前端',
                 children: [
                     '前端/vue',
