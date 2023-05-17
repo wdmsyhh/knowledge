@@ -112,6 +112,49 @@ ls -lhS
 sudo truncate -s 0 /var/log/syslog.1
 ```
 
+
+## Ubuntu 安装 Vscode server
+
+```shell
+docker run --privileged -d \
+  --name=code-server \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Etc/UTC \
+  -e PASSWORD=ken123 \
+  -e SUDO_PASSWORD=ken123 `#optional` \
+  -e DEFAULT_WORKSPACE=/config/workspace \
+  -p 8443:8443 \
+  -p 9090:8080 \
+  -p 9091:8081 \
+  -v $HOME/code-server/config:/config \
+  --restart unless-stopped \
+  lscr.io/linuxserver/code-server:latest
+```
+
+- 进入容器内部安装 vue-cli
+```shell
+docker exec -it code-server bash
+
+sudo apt-get update
+
+sudo apt-get install build-essential
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+
+nvm install 16.19.1
+
+npm install --global vue-cli
+```
+
+- 容器内查看防火墙
+```shell
+sudo apt-get install ufw
+
+sudo ufw status
+```
+
+
 --------------
 <br><br><br>
  <template>
