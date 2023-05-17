@@ -154,6 +154,11 @@ sudo apt-get install ufw
 sudo ufw status
 ```
 
+- 访问容器内启动的 vue 项目
+:::tip
+要把项目目录中 /config/index.js 中的 host:'localhost' 改成  host: '0.0.0.0' 才能从宿主机访问到内部的服务端口
+:::
+
 
 --------------
 <br><br><br>
