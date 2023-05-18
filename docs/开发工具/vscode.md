@@ -15,3 +15,7 @@
 Consolas, 'Courier New', monospace
 ```
 
+或者
+```shell
+'Droid Sans Mono', 'monospace', monospace
+```
