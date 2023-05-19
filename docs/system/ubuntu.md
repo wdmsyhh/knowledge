@@ -169,7 +169,13 @@ sudo ufw status
 :::
 
 
-## 杀掉进程
+## 查看端口被占用
+
+```shell
+sudo netstat -nap | grep 3306
+或者
+sudo lsof -i:8081
+```
 
 - 安装 lsof
 ```shell
@@ -183,6 +189,12 @@ sudo apt-get update
 ```shell
 kill -9 $(lsof -i:9000 -t)
 ```
+
+- 查看某应用的端口
+```shell
+ps -ef | grep bluebell
+```
+
 
 --------------
 <br><br><br>
