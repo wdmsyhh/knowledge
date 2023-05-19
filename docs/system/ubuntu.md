@@ -81,7 +81,7 @@ sudo dpkg -i xxxxx
 
 - 参考：
 
-[zsh-syntax-highlighting zsh-autosuggestions](zsh-syntax-highlighting zsh-autosuggestions)
+[https://juejin.cn/post/7023578642156355592](https://juejin.cn/post/7023578642156355592)
 
 [https://zhuanlan.zhihu.com/p/19556676](https://zhuanlan.zhihu.com/p/19556676)
 
