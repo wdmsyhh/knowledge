@@ -77,6 +77,14 @@ Ubuntu 的应用市场安装的 VSCode 是 snap 的削减版本，不支持中�
 sudo dpkg -i xxxxx
 ```
 
+## 安装 zsh 和 oh my zsh
+
+- 参考：
+
+[zsh-syntax-highlighting zsh-autosuggestions](zsh-syntax-highlighting zsh-autosuggestions)
+
+[https://zhuanlan.zhihu.com/p/19556676](https://zhuanlan.zhihu.com/p/19556676)
+
 ## 磁盘清理
 
 - 进入根路径。
