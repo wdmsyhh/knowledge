@@ -116,6 +116,7 @@ sudo truncate -s 0 /var/log/syslog.1
 ## Ubuntu 安装 Vscode server
 
 ```shell
+# 映射的端口最好是对应的，如果是 vue 项目启动后它会再调 http://${服务器 ip}:${容器内端口}/sockjs-node/info?t=1684373820388，假如端口不一致的话，它就访问不到容器内了。
 docker run --privileged -d \
   --name=code-server \
   -e PUID=1000 \
@@ -125,8 +126,8 @@ docker run --privileged -d \
   -e SUDO_PASSWORD=ken123 `#optional` \
   -e DEFAULT_WORKSPACE=/config/workspace \
   -p 8443:8443 \
-  -p 9090:8080 \
-  -p 9091:8081 \
+  -p 9090:9090 \
+  -p 9091:9091 \
   -v $HOME/code-server/config:/config \
   --restart unless-stopped \
   lscr.io/linuxserver/code-server:latest
@@ -159,6 +160,21 @@ sudo ufw status
 要把项目目录中 /config/index.js 中的 host:'localhost' 改成  host: '0.0.0.0' 才能从宿主机访问到内部的服务端口
 :::
 
+
+## 杀掉进程
+
+- 安装 lsof
+```shell
+sudo apt-get install lsof
+
+# 可能需要先更新一下
+sudo apt-get update
+```
+
+
+```shell
+kill -9 $(lsof -i:9000 -t)
+```
 
 --------------
 <br><br><br>

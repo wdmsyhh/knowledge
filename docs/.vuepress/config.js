@@ -38,6 +38,7 @@ module.exports = {
                     'system/windows',
                 ],
             },
+            'git/git',
             {
                 title: '开发工具',
                 children: [
