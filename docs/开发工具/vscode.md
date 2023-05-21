@@ -1,6 +1,6 @@
 # Vscode 配置
 
-## 怎么修改vscode terminal 字体大小间距？
+## 怎么修改 vscode terminal 字体大小间距？
 
 - 首先，点击【file】，点击【preferences】，点击【settings】
 
@@ -19,3 +19,24 @@ Consolas, 'Courier New', monospace
 ```shell
 'Droid Sans Mono', 'monospace', monospace
 ```
+
+## 回到上一次的位置
+
+- Windows
+```shell
+alt + 左键
+```
+
+- Ubuntu
+```shell
+ctrl + alt + -
+```
+
+## 点击进入方法
+
+- 安装 tools
+```shell
+ctrl + shift + p
+```
+
+- 安装 go 插件
