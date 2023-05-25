@@ -43,6 +43,7 @@ module.exports = {
                 title: '开发工具',
                 children: [
                     '开发工具/vscode',
+                    '开发工具/vscode-server',
                 ],
             },
             {
