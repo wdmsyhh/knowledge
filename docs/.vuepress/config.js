@@ -110,6 +110,7 @@ module.exports = {
                 title: 'Jenkins',
                 children: [
                     'jenkins/install',
+                    'jenkins/devops',
                 ],
             },
             {
@@ -120,6 +121,7 @@ module.exports = {
                     'aliyun/公网IP',
                 ],
             },
+            '开发工具/反向代理'
         ]
     },
 }
