@@ -1,3 +1,3 @@
-# 简介
+# 说明
 
-[没有。](/go/readings.md)
+[个人笔记](/go/readings.md)
