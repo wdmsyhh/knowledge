@@ -1,5 +1,22 @@
 # Ubuntu18.04 系统配置
 
+## 翻墙
+```shell
+#! /bin/bash -e
+
+main() {
+    trap 'onCtrlC' INT
+    function onCtrlC () {
+        echo -e '\nCtrl+C is captured'
+        gsettings set org.gnome.system.proxy mode 'none'
+    }
+    gsettings set org.gnome.system.proxy mode 'manual'
+    sshpass -p ${墙外服务器密码} -ND 1080 root@${墙外服务器ip}
+}
+
+main
+```
+
 ## 搜狗输入法安装
 
 :::tip

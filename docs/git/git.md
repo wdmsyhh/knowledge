@@ -17,6 +17,9 @@ cat ~/.ssh/id_rsa.pub
 git config --list --show-origin
 ```
 
+- 第一次 commit 时会提示如下：
+    ![](./images/git-config.png)
+
 - 配置用户信息
 ```shell
 git config --global user.name "John Doe"
