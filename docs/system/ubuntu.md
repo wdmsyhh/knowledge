@@ -1,6 +1,7 @@
 # Ubuntu18.04 系统配置
 
 ## 翻墙
+
 ```shell
 #! /bin/bash -e
 
@@ -43,6 +44,7 @@ sudo apt -y install fcitx-libs libfcitx-qt0 libopencc2 libopencc2-data libqt4-op
 :::tip
 只能下载2.3版本（或者其他2.x版本）的，不要下载官网3.x或者4.x版本，不然安装了也用不了，这是最关键的一点，切记！！！
 :::
+
 ```shell
 wget http://cdn2.ime.sogou.com/dl/index/1571302197/sogoupinyin_2.3.1.0112_amd64.deb
 ```
@@ -70,16 +72,14 @@ sudo apt -f install
 
 - 至此，应该就可以使用搜狗输入法了。
 
-
-
 ## 安装 VScode
-
 
 :::tip
 Ubuntu 的应用市场安装的 VSCode 是 snap 的削减版本，不支持中文。如果是从 Ubuntu 应用市场安装的，卸载之后从官网下载安装。
 :::
 
 - 卸载 snap 版本。
+
 ```shell
  sudo snap remove code
 ```
@@ -105,6 +105,7 @@ sudo dpkg -i xxxxx
 ## 磁盘清理
 
 - 进入根路径。
+
 ```shell
 cd /
 ```
@@ -120,6 +121,7 @@ df -hl
 ```shell
 du -h --max-depth=1
 ```
+
 ![](./images/image4.png)
 
 - 继续进入较大的目录执行如上命令。
@@ -127,12 +129,15 @@ du -h --max-depth=1
 ![](./images/image5.png)
 
 - 所有文件从大到小展示。
+
 ```shell
 ls -lhS
 ```
+
 ![](./images/image6.png)
 
 - 清空日志。
+
 ```shell
 sudo truncate -s 0 /var/log/syslog.1
 ```
@@ -146,6 +151,7 @@ sudo lsof -i:8081
 ```
 
 - 安装 lsof
+
 ```shell
 sudo apt-get install lsof
 
@@ -153,16 +159,19 @@ sudo apt-get install lsof
 sudo apt-get update
 ```
 
-
 ```shell
 kill -9 $(lsof -i:9000 -t)
 ```
 
 - 查看某应用的端口
+
 ```shell
 ps -ef | grep bluebell
 ```
 
+## 使用 nvm 管理不同版本的 node 与 npm
+
+- [https://www.runoob.com/w3cnote/nvm-manager-node-versions.html](https://www.runoob.com/w3cnote/nvm-manager-node-versions.html)
 
 --------------
 <br><br><br>
