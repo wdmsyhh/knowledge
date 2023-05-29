@@ -1,9 +1,5 @@
 #! /bin/bash -e
 
-source ~/.bashrc
-
-nvm use v16.20.0
-
 npm install -D vuepress
 
 yarn docs:build
