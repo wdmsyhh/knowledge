@@ -1,5 +1,9 @@
 #! /bin/bash -e
 
+npm install -D vuepress
+
+yarn docs:build
+
 docker build -t nginxwithdist .
 
 # 检查容器是否存在
