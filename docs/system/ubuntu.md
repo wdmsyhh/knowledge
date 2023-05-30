@@ -173,6 +173,28 @@ ps -ef | grep bluebell
 
 - [https://www.runoob.com/w3cnote/nvm-manager-node-versions.html](https://www.runoob.com/w3cnote/nvm-manager-node-versions.html)
 
+## 软件商店安装软件问题
+
+- Unable to install "Visual Studio Code": snap "code" has "install-snap" change in progress
+
+原因：软件之前安装了一次，只是没安装完。
+
+解决方法：
+
+1、查看安装情况
+
+```shell
+snap changes
+```
+
+ID=3是我之前安装失败的。
+
+2、终止，重新安装
+
+```shell
+sudo snap abort 7
+```
+
 --------------
 <br><br><br>
  <template>
