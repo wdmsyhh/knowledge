@@ -195,6 +195,25 @@ ID=3是我之前安装失败的。
 sudo snap abort 7
 ```
 
+## 邮件客户端配置
+
+:::tip
+可以直接使用钉钉客户端，官网下载安装即刻。
+:::
+
+### Thunderbird
+
+- 账号设置：
+![](./images/email-client-setting-ubuntu-1.png)
+
+- 点左下角 Manual Config，修改为如下：
+![](./images/email-client-setting-ubuntu-2.png)
+
+修改完后点 Re-test，再点 Done
+
+- 收信设置，每分钟检查一次，以及时接收邮件：
+![](./images/email-client-setting-ubuntu-3.png)
+
 --------------
 <br><br><br>
  <template>
