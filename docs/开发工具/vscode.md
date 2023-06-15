@@ -11,11 +11,13 @@
 - 找到有关于字体Font的设置选项，比如Font Size字体大小，Font Family字体，还有间距、加粗等
 
 - 修改 Font Family
+
 ```shell
 Consolas, 'Courier New', monospace
 ```
 
 或者
+
 ```shell
 'Droid Sans Mono', 'monospace', monospace
 ```
@@ -23,11 +25,13 @@ Consolas, 'Courier New', monospace
 ## 回到上一次的位置
 
 - Windows
+
 ```shell
 alt + 左键
 ```
 
 - Ubuntu
+
 ```shell
 ctrl + alt + -
 ```
@@ -35,10 +39,18 @@ ctrl + alt + -
 ## 点击进入方法
 
 - 安装 tools
+
 ```shell
 ctrl + shift + p
 ```
+
 ![](./images/golang-tools.png)
 
 - 安装 go 插件
 ![](./images/extension-go.png)
+
+## 怎么设置单机文件打开新的标签页？
+
+- 方式一：双击文件。
+- 方式二：workbench.editor.enablePreview 设置为 false。下图中的第三个选项。
+![](./images/image-1.png)
