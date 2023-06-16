@@ -46,3 +46,15 @@ init: {
 ## 部署之后使用 www. 开头的域名转发到前端服务，浏览器 tab 的 icon 不显示问题。
 
 其它开头的域名比如 front.xxx.xyz，代理到前端服务上可以正常显示 icon。
+
+## 使用 nginx 部署 vue 打包好的文件时刷新报错解决。
+
+- 在nginx配置的 location 中加上 `try_files $uri $uri/ /index.html;` 这个就行，例如：
+
+```shell
+location / {
+    root   html/dist;
+    index  index.html index.htm;
+    try_files $uri $uri/ /index.html;
+}
+```
