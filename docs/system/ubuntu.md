@@ -102,6 +102,41 @@ sudo dpkg -i xxxxx
 
 [https://zhuanlan.zhihu.com/p/19556676](https://zhuanlan.zhihu.com/p/19556676)
 
+- 先安装 zsh。
+
+```shell
+sudo apt-get install zsh
+```
+
+- 安装完成后设置当前用户使用 zsh：
+
+```shell
+chsh -s /bin/zsh
+```
+
+也可以直接使用 `zsh` 和 `bash` 切换。
+
+- 安装 oh-my-zsh。
+
+```shell
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+```
+
+- 修改插件
+
+在 ~/.zshrc 中修改插件： `plugins=(git)` 改为 `plugins=(git zsh-syntax-highlighting zsh-autosuggestions)`
+
+- 安装插件
+
+```shell
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+source .zshrc
+```
+
+- 重新打开终端就可以了。
+
 ## 磁盘清理
 
 - 进入根路径。
