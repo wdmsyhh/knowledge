@@ -58,3 +58,40 @@ location / {
     try_files $uri $uri/ /index.html;
 }
 ```
+
+## 构建项目
+
+- 安装 vue-cli
+
+官网 [https://cli.vuejs.org/zh/guide/](https://cli.vuejs.org/zh/guide/)
+
+```shell
+# 指定版本安装
+npm install -g @vue/cli@5
+```
+
+- 安装 ant-design-vue
+
+```shell
+npm install ant-design-vue@1
+```
+
+- 安装 vue-router
+
+```shell
+npm install vue-router@3
+```
+
+- 安装 axios
+
+```shell
+npm install axios
+```
+
+- 安装 babel-plugin-import
+
+[https://juejin.cn/post/7051206427402043423](https://juejin.cn/post/7051206427402043423)
+
+```shell
+npm install babel-plugin-import --save-dev
+```
