@@ -69,3 +69,13 @@ ctrl + shift + p
 - 按住**Ctrl + Shift**，再按键盘上的上或下键，可以使一列上出现多个光标。
 - 选中一段文字，按**shift+alt+i**，在每行末尾都会出现光标
 - 按**shift+alt**，再使用鼠标拖动，也可以出现竖直的列光标，同时可以选中多列。
+
+## 前端常用插件
+
+- Auto Close Tag
+- Auto Rename Tag
+- Vetur
+- Easy LESS
+- ESLint
+- Stylelint
+- Code Spell Checker
