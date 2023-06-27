@@ -72,10 +72,6 @@ ctrl + shift + p
 
 ## 前端常用插件
 
-- Auto Close Tag
-- Auto Rename Tag
-- Vetur
-- Easy LESS
-- ESLint
-- Stylelint
-- Code Spell Checker
+![](./images/extension-1.png)
+![](./images/extension-2.png)
+![](./images/extension-3.png)
