@@ -70,8 +70,13 @@ ctrl + shift + p
 - 选中一段文字，按**shift+alt+i**，在每行末尾都会出现光标
 - 按**shift+alt**，再使用鼠标拖动，也可以出现竖直的列光标，同时可以选中多列。
 
-## 前端常用插件
+## 常用插件
 
 ![](./images/extension-1.png)
 ![](./images/extension-2.png)
 ![](./images/extension-3.png)
+
+### 各种数据库插件
+
+- 安装下面一个可以支持多种数据库连接
+![](./images/extension-4.png)
