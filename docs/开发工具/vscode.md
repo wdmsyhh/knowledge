@@ -80,3 +80,36 @@ ctrl + shift + p
 
 - 安装下面一个可以支持多种数据库连接
 ![](./images/extension-4.png)
+
+## vscode 执行 go test 测试结果没有更新
+
+参考：
+[https://blog.csdn.net/qq_35066345/article/details/89262974](https://blog.csdn.net/qq_35066345/article/details/89262974)
+
+- 情况说明
+
+这是因为测试并没有被实际运行，显示的是之前缓存的测试结果。从Go1.10开始，测试结果将被缓存，golang缓存测试结果这点在官方文档也能看到说明。见:[https://golang.org/cmd/go/#hdr-Testing_flags](https://golang.org/cmd/go/#hdr-Testing_flags)
+
+- vscode 禁用 go test缓存
+
+要禁用go test的缓存，需要添加参数:-count=1。那么go test的命令是这样子的：
+
+```go
+go test -v -count=1 gofile_test.go
+```
+
+在vscode中添加步骤：
+
+1.左下角打开设置
+
+2.配置项搜索 “go”
+
+3.选择工作区设置，如果需要全局设置禁用缓存的话，用户设置也需要重复同样的操作
+
+4.添加参数-count=1(-v 的参数设置是测试时显示打印信息)
+
+![](./images/go-test-1.png)
+
+![](./images/go-test-2.png)
+
+![](./images/go-test-3.png)
