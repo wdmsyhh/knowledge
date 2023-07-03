@@ -128,6 +128,7 @@ module.exports = {
                 children: [
                     '基础知识/计算机',
                     '基础知识/redis',
+                    '基础知识/题目解析',
                 ],
             },
         ]
