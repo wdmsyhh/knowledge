@@ -1,3 +1,3 @@
 # 说明
 
-[个人笔记](/go/readings.md)
+[开始学习吧](/go/readings.md)

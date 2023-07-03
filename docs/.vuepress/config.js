@@ -12,7 +12,7 @@ module.exports = {
             },
         ]
     ],
-    title: '笔记（更新中...）',
+    title: 'BLOG（更新中...）',
     description: 'Just playing around',
     themeConfig: {
         nav: [
@@ -122,6 +122,7 @@ module.exports = {
                 ],
             },
             '开发工具/内网穿透',
+            'chatgpt/chatgpt',
             {
                 title: '基础知识',
                 children: [
