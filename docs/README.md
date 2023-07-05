@@ -4,9 +4,7 @@
 
 [https://github.com/wdmsyhh](https://github.com/wdmsyhh)
 
-## 其它
-
-待使用
+## 我的其它
 
 [http://front.get123.xyz/](http://front.get123.xyz/)
 
