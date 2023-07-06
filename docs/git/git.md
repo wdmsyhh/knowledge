@@ -36,6 +36,20 @@ git config --global user.email johndoe@example.com
 
 ## 常用操作
 
+### 提交代码
+
+```shell
+git push -u origin feat-xxx
+```
+
+### 修改代码后覆盖上次的 commit
+
+```shell
+git commit --amend
+
+git push -f
+```
+
 ### 回退上次的 commit
 
 ```shell
@@ -53,3 +67,9 @@ git stash
 ```shell
 git stash apply
 ```
+
+### rebase（变基）
+
+```shell
+git rebase origin/develop
+``
