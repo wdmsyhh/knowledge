@@ -44,6 +44,7 @@ module.exports = {
                 children: [
                     '开发工具/vscode',
                     '开发工具/vscode-server',
+                    '开发工具/goland',
                 ],
             },
             {
