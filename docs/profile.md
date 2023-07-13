@@ -1,3 +1,5 @@
 # 说明
 
-[开始学习吧](/go/readings.md)
+![](./go/images/1.png)
+
+[go](/go/readings.md)

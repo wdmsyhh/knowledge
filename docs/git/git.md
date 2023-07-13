@@ -1,5 +1,10 @@
 # Git
 
+## 阅读
+
+- [https://www.runoob.com/git/git-tutorial.html](https://www.runoob.com/git/git-tutorial.html)
+- [https://git-scm.com/book/zh/v2](https://git-scm.com/book/zh/v2)
+
 ## 配置
 
 - 添加 SSH Key 到 GitLab
@@ -20,7 +25,8 @@ git config --list --show-origin
 ```
 
 - 第一次 commit 时会提示如下：
-    ![](./images/git-config.png)
+
+![](./images/git-config.png)
 
 - 配置用户信息
 
@@ -28,11 +34,6 @@ git config --list --show-origin
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
-
-## 阅读
-
-- [https://www.runoob.com/git/git-tutorial.html](https://www.runoob.com/git/git-tutorial.html)
-- [https://git-scm.com/book/zh/v2](https://git-scm.com/book/zh/v2)
 
 ## 常用操作
 
