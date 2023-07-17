@@ -96,6 +96,12 @@ module.exports = {
                 ],
             },
             {
+                title: '数据库',
+                children: [
+                    '数据库/mongodb',
+                ],
+            },
+            {
                 title: 'Docker',
                 children: [
                     'docker/安装',
