@@ -59,3 +59,29 @@ curl --user USER:API_TOKEN -X POST https://localhost:8080/job/test/build --data-
 `paramA` 你的参数名称
 
 `123` 你的参数值
+
+### 我的实践：
+
+- 添加参数：
+
+![](./images/jenkins-6.png)
+
+- 添加 shell 脚本
+
+![](./images/jenkins-5.png)
+
+- 调用 api:
+
+```shell
+curl -X POST http://jenkins.get123.xyz/job/test/build \
+    --user myUser:xxxxxxxxx \
+    --data-urlencode json='{"parameter": [{"name":"BRANCH", "value":"master"},{"name":"SERVICES", "value":"order product"}]}'
+```
+
+- 查看参数：
+
+![](./images/jenkins-3.png)
+
+- 查看输出：
+
+![](./images/jenkins-4.png)
