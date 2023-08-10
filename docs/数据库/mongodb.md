@@ -1,5 +1,11 @@
 # Mongodb
 
+## 事务中不能进行表的创建工作
+
+- 也就是说在事物中的操作前提是表提前存在，不然会有一下报错：
+
+Cannot create namespace portal-tenants-shared.ec.storedValueAccount in multi-document transaction
+
 ## Aggregate 使用
 
 - 统计订单总金额、订单总数、买家数
