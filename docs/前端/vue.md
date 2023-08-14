@@ -95,3 +95,11 @@ npm install axios
 ```shell
 npm install babel-plugin-import --save-dev
 ```
+
+## 登录
+
+### 多租户登录流程
+
+- 根据输入的邮箱查询所有 users（每个 user 对应一个 租户）。
+- 验证密码正确则返回该邮箱对应所有租户并设置一个 accessCode （可以用 uuid）到 redis 为一分钟，跟所有 users 一起返回。
+- 登录验证传入的租户 id 和 accessCode，生成 accessToken 记录到 cookie 并标记登录成功返回用户信息。
