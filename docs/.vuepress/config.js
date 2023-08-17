@@ -99,6 +99,7 @@ module.exports = {
                 title: '数据库',
                 children: [
                     '数据库/mongodb',
+                    '数据库/es',
                 ],
             },
             {
