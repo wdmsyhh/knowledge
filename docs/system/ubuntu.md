@@ -249,6 +249,40 @@ sudo snap abort 7
 - 收信设置，每分钟检查一次，以及时接收邮件：
 ![](./images/email-client-setting-ubuntu-3.png)
 
+## 抓包工具
+
+### Wireshark
+
+教程： https://time.geekbang.org/column/article/100124
+
+- 软件商店安装。
+- 启动，过滤器选择 HTTP TCP port(80)，双击 loopback。
+![](./images/wireshark-2.png)
+
+参照途中安装依赖，加入 group 后重启电脑即可。
+
+:::tip
+这是由于当前用户没有权限运行/usr/bin/dumpcap造成的。/usr/bin/dumpcap是Wireshark的包捕获引擎。
+
+先用ls命令看一下dumpcap的权限情况：
+xy@debian-vm-1:~$ ls -lah /usr/bin/dumpcap
+-rwxr-xr-- 1 root wireshark 95K 1月  23 01:03 /usr/bin/dumpcap
+
+可以看到，dumpcap属于wireshark组，而该组是有运行权限的，那么只要将用户xy添加到wireshark组即可运行dumpcap。
+
+再看下当前用户xy属于哪个组，使用groups命令，
+xy@debian-vm-1:~$ groups
+xy root cdrom floppy audio dip video plugdev netdev bluetooth lpadmin scanner
+
+可以看到，用户xy属于好几个组，但没有wireshark组。使用以下命令将用户xy添加到wireshark组：
+sudo usermod -a -G wireshark xy
+
+-a表示为用户追加一个组，即将用户xy加入一个组，但不从原组移除。
+-G参数后面紧跟需追加的组名。
+
+注销再进入系统，Wireshark就可以正常运行了，但groups命令还看不到新追加的wireshark组；重启后，才可用groups命令看到新追加的wireshark组。
+:::
+
 --------------
 <br><br><br>
  <template>
