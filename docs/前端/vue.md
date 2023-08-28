@@ -96,6 +96,11 @@ npm install axios
 npm install babel-plugin-import --save-dev
 ```
 
+## 文件目录
+
+- 当前目录。
+![](./images/vue/image-2.png)
+
 ## 登录
 
 ### 多租户登录流程
