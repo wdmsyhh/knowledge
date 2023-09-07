@@ -15,3 +15,7 @@ go install sigs.k8s.io/kind@v0.8.0
 
 kind create cluster
 ```
+
+这里安装的是 0.8.0 版本的 kind，所对应的 kubernetes 版本是 1.18.2
+
+版本对应关系：https://github.com/kubernetes-sigs/kind/releases?page=2
