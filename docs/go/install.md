@@ -28,6 +28,25 @@ export PATH=$PATH:/usr/local/go/bin
 source /etc/profile
 ```
 
+:::tip
+当你在当前窗口中运行 source /etc/profile 命令时，它仅在当前会话中生效，关闭会话后失效。如果你希望 /etc/profile 文件中的环境变量在每个终端会话中都生效，可以将命令添加到当前用户的配置文件中，例如 ~/.bashrc 或 ~/.bash_profile。
+
+你可以按照以下步骤进行操作：
+:::
+
+1.打开你的终端，并编辑 ~/.bashrc 文件（如果不存在则创建它）。
+
+```shell
+vim ~/.bashrc
+```
+
+2.为了立即使更改生效，可以运行以下命令来重新加载 ~/.bashrc 文件。
+
+```shell
+source ~/.bashrc
+```
+
+
 - 验证是否生效
 ```shell
 go version
