@@ -122,6 +122,14 @@ module.exports = {
                 ],
             },
             {
+                title: 'K8s',
+                children: [
+                    'k8s/kebectl',
+                    'k8s/kind',
+                    'k8s/minikube',
+                ],
+            },
+            {
                 title: '阿里云',
                 children: [
                     'aliyun/域名',
