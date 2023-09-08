@@ -83,17 +83,29 @@ spec:
     - name: my-registry-secret-1
 
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
+  # 部署名字
   name: blogrpc-hello
 spec:
-  # 定义容器，可以多个
-  containers:
-    - name: blogrpc-hello # 容器名字
-      image: registry.ap-southeast-1.aliyuncs.com/yhhnamespace/blogrpc-hello:local # 镜像
-  imagePullSecrets:
-    - name: my-registry-secret-1
+  replicas: 2
+  # 用来查找关联的 Pod，所有标签都匹配才行
+  selector:
+    matchLabels:
+      app: blogrpc-hello
+  # 定义 Pod 相关数据
+  template:
+    metadata:
+      labels:
+        app: blogrpc-hello
+    spec:
+      # 定义容器，可以多个
+      containers:
+        - name: blogrpc-hello # 容器名字
+          image: registry.ap-southeast-1.aliyuncs.com/yhhnamespace/blogrpc-hello:local # 镜像
+      imagePullSecrets:
+        - name: my-registry-secret-1
 
 ---
 apiVersion: v1
@@ -109,4 +121,17 @@ spec:
     - port: 1701        # 本 Service 的端口
       targetPort: 1701  # 容器端口
       nodePort: 31000   # 节点端口，范围固定 30000 ~ 32767
+```
+
+## test
+
+- 获取 token
+
+```shell
+curl "localhost:9091/accessToken?appId=111&appSecret=222"
+```
+
+```shell
+curl "http://localhost:9091/v1/example/hello/get?value=aaa" \
+ -H 'X-Access-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExMSIsImFwcFNlY3JldCI6IjIyMiIsImF1ZCI6ImF1ZCIsImV4cCI6MTY5NDE2NjU0NCwiaWF0IjoxNjk0MTYyOTQ0LCJpc3MiOiJpc3MiLCJzdWIiOiIxMTE6MjIyIn0.YaRiSDbnGkVrtOh9Ea-Fpttw5yR8MCj6QxDn0_Wmczc'
 ```

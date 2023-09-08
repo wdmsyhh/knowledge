@@ -270,3 +270,29 @@ enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 192.168.0.100  netmask 255.255.255.0  broadcast 192.168.0.255
         ...
 ```
+
+## curl
+
+- get 请求
+
+```shell
+curl "localhost:9091/accessToken?appId=111&appSecret=222"
+# 响应结果
+{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExMSIsImFwcFNlY3JldCI6IjIyMiIsImF1ZCI6ImF1ZCIsImV4cCI6MTY5NDE2NzQxMiwiaWF0IjoxNjk0MTYzODEyLCJpc3MiOiJpc3MiLCJzdWIiOiIxMTE6MjIyIn0.OpKA3kZq7z63-l2ioaxnHf-hb080ApoXj62nsGWSOPI","expires_in":3600}%
+
+# 可以将该命令与 -i 或 -I 选项一起使用，以便在控制台中显示响应头信息和内容
+curl -i "localhost:9091/accessToken?appId=111&appSecret=222"
+# 响应结果
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Fri, 08 Sep 2023 09:03:35 GMT
+Content-Length: 261
+
+{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExMSIsImFwcFNlY3JldCI6IjIyMiIsImF1ZCI6ImF1ZCIsImV4cCI6MTY5NDE2NzQxNSwiaWF0IjoxNjk0MTYzODE1LCJpc3MiOiJpc3MiLCJzdWIiOiIxMTE6MjIyIn0.vnTYd5nA9MXGp4bx_o4rDPgfJ8jAV1U0zWiUjOJFR9g","expires_in":3600}%
+```
+
+可以使用 -H 或 --header 选项来在 cURL 请求中传递一个或多个自定义头部信息。以下是使用 cURL 传递头部的示例命令：
+
+```shell
+curl -H "Content-Type: application/json" -H "Authorization: Bearer abcdef123456" "https://example.com/api"
+```
