@@ -33,7 +33,7 @@ module.exports = {
             {
                 title: '系统',
                 children: [
-                    'system/linux',
+                    'system/ubuntu常用命令',
                     'system/ubuntu',
                     'system/windows',
                 ],
@@ -106,6 +106,7 @@ module.exports = {
                 title: 'Docker',
                 children: [
                     'docker/安装',
+                    'docker/使用',
                 ],
             },
             {
