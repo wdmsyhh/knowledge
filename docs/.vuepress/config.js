@@ -128,6 +128,7 @@ module.exports = {
                     'k8s/kubectl',
                     'k8s/kind',
                     'k8s/minikube',
+                    'k8s/tencent',
                 ],
             },
             {
