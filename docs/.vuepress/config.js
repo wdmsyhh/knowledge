@@ -126,8 +126,8 @@ module.exports = {
                 title: 'K8s',
                 children: [
                     'k8s/kubectl',
-                    'k8s/kind',
                     'k8s/minikube',
+                    'k8s/kind',
                     'k8s/tencent',
                 ],
             },
