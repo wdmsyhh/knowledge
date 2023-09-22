@@ -75,6 +75,7 @@ ctrl + shift + p
 ![](./images/extension-1.png)
 ![](./images/extension-2.png)
 ![](./images/extension-3.png)
+![](./images/extension-3-3.png)
 
 ### 各种数据库插件
 
