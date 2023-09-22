@@ -64,4 +64,6 @@ kubectl rollout undo deployment test-k8s --to-revision=2
 kubectl delete deployment test-k8s
 # 进入 pod 中的容器
 kubectl exec -it pod-name -c container-name -- bash
+# 删除所有服务
+kubectl delete all --all
 ```

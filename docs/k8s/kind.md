@@ -35,6 +35,12 @@ kubectl cluster-info --context kind-kind
 Not sure what to do next? 😅  Check out https://kind.sigs.k8s.io/docs/user/quick-start/
 ```
 
+- 删除集群
+
+```shell
+kind delete cluster
+```
+
 - 查看集群信息
 
 ```shell
