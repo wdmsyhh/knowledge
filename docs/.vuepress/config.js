@@ -129,6 +129,7 @@ module.exports = {
                     'k8s/kind',
                     'k8s/minikube',
                     'k8s/tencent',
+                    'k8s/helm',
                 ],
             },
             {

@@ -226,6 +226,11 @@ spec:
         - name: blogrpc-member # 容器名字
           image: registry.ap-southeast-1.aliyuncs.com/yhhnamespace/blogrpc-member:local # 镜像
           imagePullPolicy: Always
+          env:
+            - name: MONGO_MASTER_DSN
+              value: "mongodb://root:root@mongo-mongodb-0.mongo-mongodb-headless.default.svc.cluster.local,mongo-mongodb-1.mongo-mongodb-headless.default.svc.cluster.local/portal-master?authSource=admin"
+            - name: MONGO_MASTER_REPLSET
+              value: "rs0"
       imagePullSecrets:
         - name: my-registry-secret-1
 
