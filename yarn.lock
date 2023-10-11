@@ -3508,9 +3508,9 @@
   "version" "1.1.1"
 
 "electron-to-chromium@^1.4.535":
-  "integrity" "sha512-R77KD6mXv37DOyKLN/eW1rGS61N6yHOfapNSX9w+y9DdPG83l9Gkuv7qkCFZ4Ta4JPhrjgQfYbv4Y3TnM1Hi2Q=="
-  "resolved" "https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.548.tgz"
-  "version" "1.4.548"
+  "integrity" "sha512-gpXfJslSi4hYDkA0mTLEpYKRv9siAgSUgZ+UWyk+J5Cttpd1ThCVwdclzIwQSclz3hYn049+M2fgrP1WpvF8xg=="
+  "resolved" "https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.549.tgz"
+  "version" "1.4.549"
 
 "elliptic@^6.5.3":
   "integrity" "sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ=="
@@ -3585,9 +3585,9 @@
     "through" "~2.3.4"
 
 "envinfo@^7.2.0":
-  "integrity" "sha512-/o+BXHmB7ocbHEAs6F2EnG0ogybVVUdkRunTT2glZU9XAaGmhqskrvKwqXuDfNjEO0LZKWdejEEpnq8aM0tOaw=="
-  "resolved" "https://registry.npmmirror.com/envinfo/-/envinfo-7.8.1.tgz"
-  "version" "7.8.1"
+  "integrity" "sha512-ZtUjZO6l5mwTHvc1L9+1q5p/R3wTopcfqMW8r5t8SJSKqeVI/LtajORwRFEKpEFuekjD0VBjwu1HMxL4UalIRw=="
+  "resolved" "https://registry.npmmirror.com/envinfo/-/envinfo-7.10.0.tgz"
+  "version" "7.10.0"
 
 "errno@^0.1.3", "errno@~0.1.7":
   "integrity" "sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A=="
@@ -3867,15 +3867,7 @@
   dependencies:
     "is-extendable" "^0.1.0"
 
-"extend-shallow@^3.0.0":
-  "integrity" "sha512-BwY5b5Ql4+qZoefgMj2NUmx+tehVTH/Kf4k1ZEtOHNFcm2wSxMRo992l6X3TIgni2eZVTZ85xMOjF31fwZAj6Q=="
-  "resolved" "https://registry.npmmirror.com/extend-shallow/-/extend-shallow-3.0.2.tgz"
-  "version" "3.0.2"
-  dependencies:
-    "assign-symbols" "^1.0.0"
-    "is-extendable" "^1.0.1"
-
-"extend-shallow@^3.0.2":
+"extend-shallow@^3.0.0", "extend-shallow@^3.0.2":
   "integrity" "sha512-BwY5b5Ql4+qZoefgMj2NUmx+tehVTH/Kf4k1ZEtOHNFcm2wSxMRo992l6X3TIgni2eZVTZ85xMOjF31fwZAj6Q=="
   "resolved" "https://registry.npmmirror.com/extend-shallow/-/extend-shallow-3.0.2.tgz"
   "version" "3.0.2"
@@ -4312,9 +4304,9 @@
     "url-parse-lax" "^3.0.0"
 
 "graceful-fs@^4.1.11", "graceful-fs@^4.1.15", "graceful-fs@^4.1.2", "graceful-fs@^4.1.6":
-  "integrity" "sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA=="
-  "resolved" "https://registry.npmmirror.com/graceful-fs/-/graceful-fs-4.2.10.tgz"
-  "version" "4.2.10"
+  "integrity" "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ=="
+  "resolved" "https://registry.npmmirror.com/graceful-fs/-/graceful-fs-4.2.11.tgz"
+  "version" "4.2.11"
 
 "gray-matter@^4.0.1":
   "integrity" "sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q=="
@@ -4544,9 +4536,9 @@
     "entities" "^2.0.0"
 
 "http-cache-semantics@^4.0.0":
-  "integrity" "sha512-carPklcUh7ROWRK7Cv27RPtdhYhUsela/ue5/jKzjegVvXDqM2ILE9Q2BGn9JZJh1g87cp56su/FgQSzcWS8cQ=="
-  "resolved" "https://registry.npmmirror.com/http-cache-semantics/-/http-cache-semantics-4.1.0.tgz"
-  "version" "4.1.0"
+  "integrity" "sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ=="
+  "resolved" "https://registry.npmmirror.com/http-cache-semantics/-/http-cache-semantics-4.1.1.tgz"
+  "version" "4.1.1"
 
 "http-deceiver@^1.2.7":
   "integrity" "sha512-LmpOGxTfbpgtGVxJrj5k7asXHCgNZp5nLfp+hWc8QQRqtb7fUy6kRY3BO1h9ddF6yIPYUARgxGOwB42DnxIaNw=="
@@ -4918,7 +4910,16 @@
     "is-data-descriptor" "^0.1.4"
     "kind-of" "^5.0.0"
 
-"is-descriptor@^1.0.0", "is-descriptor@^1.0.2":
+"is-descriptor@^1.0.0":
+  "integrity" "sha512-2eis5WqQGV7peooDyLmNEPUrps9+SXX5c9pL3xEB+4e9HnGuDa7mB7kHxHw4CbqS9k1T2hOH3miL8n8WtiYVtg=="
+  "resolved" "https://registry.npmmirror.com/is-descriptor/-/is-descriptor-1.0.2.tgz"
+  "version" "1.0.2"
+  dependencies:
+    "is-accessor-descriptor" "^1.0.0"
+    "is-data-descriptor" "^1.0.0"
+    "kind-of" "^6.0.2"
+
+"is-descriptor@^1.0.2":
   "integrity" "sha512-2eis5WqQGV7peooDyLmNEPUrps9+SXX5c9pL3xEB+4e9HnGuDa7mB7kHxHw4CbqS9k1T2hOH3miL8n8WtiYVtg=="
   "resolved" "https://registry.npmmirror.com/is-descriptor/-/is-descriptor-1.0.2.tgz"
   "version" "1.0.2"
@@ -5129,25 +5130,20 @@
   "resolved" "https://registry.npmmirror.com/is-yarn-global/-/is-yarn-global-0.3.0.tgz"
   "version" "0.3.0"
 
-"isarray@^1.0.0":
+"isarray@^1.0.0", "isarray@~1.0.0", "isarray@1.0.0":
   "integrity" "sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ=="
   "resolved" "https://registry.npmmirror.com/isarray/-/isarray-1.0.0.tgz"
   "version" "1.0.0"
 
-"isarray@^2.0.1", "isarray@^2.0.5":
+"isarray@^2.0.1":
   "integrity" "sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw=="
   "resolved" "https://registry.npmmirror.com/isarray/-/isarray-2.0.5.tgz"
   "version" "2.0.5"
 
-"isarray@~1.0.0":
-  "integrity" "sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ=="
-  "resolved" "https://registry.npmmirror.com/isarray/-/isarray-1.0.0.tgz"
-  "version" "1.0.0"
-
-"isarray@1.0.0":
-  "integrity" "sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ=="
-  "resolved" "https://registry.npmmirror.com/isarray/-/isarray-1.0.0.tgz"
-  "version" "1.0.0"
+"isarray@^2.0.5":
+  "integrity" "sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw=="
+  "resolved" "https://registry.npmmirror.com/isarray/-/isarray-2.0.5.tgz"
+  "version" "2.0.5"
 
 "isexe@^2.0.0":
   "integrity" "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="
@@ -5280,7 +5276,14 @@
   "resolved" "https://registry.npmmirror.com/killable/-/killable-1.0.1.tgz"
   "version" "1.0.1"
 
-"kind-of@^3.0.2", "kind-of@^3.0.3":
+"kind-of@^3.0.2":
+  "integrity" "sha512-NOW9QQXMoZGg/oqnVNoNTTIFEIid1627WCffUBJEdMxYApq7mNE7CpzucIPc+ZQg25Phej7IJSmX3hO+oblOtQ=="
+  "resolved" "https://registry.npmmirror.com/kind-of/-/kind-of-3.2.2.tgz"
+  "version" "3.2.2"
+  dependencies:
+    "is-buffer" "^1.1.5"
+
+"kind-of@^3.0.3":
   "integrity" "sha512-NOW9QQXMoZGg/oqnVNoNTTIFEIid1627WCffUBJEdMxYApq7mNE7CpzucIPc+ZQg25Phej7IJSmX3hO+oblOtQ=="
   "resolved" "https://registry.npmmirror.com/kind-of/-/kind-of-3.2.2.tgz"
   "version" "3.2.2"
@@ -5705,9 +5708,9 @@
     "brace-expansion" "^1.1.7"
 
 "minimist@^1.2.0", "minimist@^1.2.6":
-  "integrity" "sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g=="
-  "resolved" "https://registry.npmmirror.com/minimist/-/minimist-1.2.7.tgz"
-  "version" "1.2.7"
+  "integrity" "sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA=="
+  "resolved" "https://registry.npmmirror.com/minimist/-/minimist-1.2.8.tgz"
+  "version" "1.2.8"
 
 "mississippi@^3.0.0":
   "integrity" "sha512-x471SsVjUtBRtcvd4BzKE9kFC+/2TeWgKCgw0bZcw1b9l2X3QX5vCWgF+KaZaYm87Ss//rHnWryupDrgLvmSkA=="
@@ -7113,9 +7116,9 @@
   "version" "0.2.1"
 
 "resolve@^1.14.2", "resolve@^1.22.0":
-  "integrity" "sha512-njhxM7mV12JfufShqGy3Rz8j11RPdLy4xi15UurGJeoHLfJpVXKdh3ueuOqbYUcDZnffr6X739JBo5LzyahEsw=="
-  "resolved" "https://registry.npmmirror.com/resolve/-/resolve-1.22.6.tgz"
-  "version" "1.22.6"
+  "integrity" "sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw=="
+  "resolved" "https://registry.npmmirror.com/resolve/-/resolve-1.22.8.tgz"
+  "version" "1.22.8"
   dependencies:
     "is-core-module" "^2.13.0"
     "path-parse" "^1.0.7"
@@ -7281,12 +7284,7 @@
   "resolved" "https://registry.npmmirror.com/semver/-/semver-5.7.2.tgz"
   "version" "5.7.2"
 
-"semver@^6.0.0", "semver@^6.1.0", "semver@^6.2.0", "semver@^6.3.0":
-  "integrity" "sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw=="
-  "resolved" "https://registry.npmmirror.com/semver/-/semver-6.3.0.tgz"
-  "version" "6.3.0"
-
-"semver@^6.3.1":
+"semver@^6.0.0", "semver@^6.1.0", "semver@^6.2.0", "semver@^6.3.0", "semver@^6.3.1":
   "integrity" "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA=="
   "resolved" "https://registry.npmmirror.com/semver/-/semver-6.3.1.tgz"
   "version" "6.3.1"
@@ -7691,7 +7689,7 @@
   dependencies:
     "safe-buffer" "~5.1.0"
 
-"string-width@^3.0.0":
+"string-width@^3.0.0", "string-width@^3.1.0":
   "integrity" "sha512-vafcv6KjVZKSgz06oM/H6GDBrAtz8vdhQakGjFIvNrHA6y3HCF1CInLy+QLq8dTJPQ1b+KDUqDFctkdRW44e1w=="
   "resolved" "https://registry.npmmirror.com/string-width/-/string-width-3.1.0.tgz"
   "version" "3.1.0"
@@ -7700,16 +7698,16 @@
     "is-fullwidth-code-point" "^2.0.0"
     "strip-ansi" "^5.1.0"
 
-"string-width@^3.1.0":
-  "integrity" "sha512-vafcv6KjVZKSgz06oM/H6GDBrAtz8vdhQakGjFIvNrHA6y3HCF1CInLy+QLq8dTJPQ1b+KDUqDFctkdRW44e1w=="
-  "resolved" "https://registry.npmmirror.com/string-width/-/string-width-3.1.0.tgz"
-  "version" "3.1.0"
+"string-width@^4.0.0":
+  "integrity" "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g=="
+  "resolved" "https://registry.npmmirror.com/string-width/-/string-width-4.2.3.tgz"
+  "version" "4.2.3"
   dependencies:
-    "emoji-regex" "^7.0.1"
-    "is-fullwidth-code-point" "^2.0.0"
-    "strip-ansi" "^5.1.0"
+    "emoji-regex" "^8.0.0"
+    "is-fullwidth-code-point" "^3.0.0"
+    "strip-ansi" "^6.0.1"
 
-"string-width@^4.0.0", "string-width@^4.1.0":
+"string-width@^4.1.0":
   "integrity" "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g=="
   "resolved" "https://registry.npmmirror.com/string-width/-/string-width-4.2.3.tgz"
   "version" "4.2.3"
@@ -7752,7 +7750,21 @@
   dependencies:
     "ansi-regex" "^2.0.0"
 
-"strip-ansi@^5.0.0", "strip-ansi@^5.1.0", "strip-ansi@^5.2.0":
+"strip-ansi@^5.0.0":
+  "integrity" "sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA=="
+  "resolved" "https://registry.npmmirror.com/strip-ansi/-/strip-ansi-5.2.0.tgz"
+  "version" "5.2.0"
+  dependencies:
+    "ansi-regex" "^4.1.0"
+
+"strip-ansi@^5.1.0":
+  "integrity" "sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA=="
+  "resolved" "https://registry.npmmirror.com/strip-ansi/-/strip-ansi-5.2.0.tgz"
+  "version" "5.2.0"
+  dependencies:
+    "ansi-regex" "^4.1.0"
+
+"strip-ansi@^5.2.0":
   "integrity" "sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA=="
   "resolved" "https://registry.npmmirror.com/strip-ansi/-/strip-ansi-5.2.0.tgz"
   "version" "5.2.0"
