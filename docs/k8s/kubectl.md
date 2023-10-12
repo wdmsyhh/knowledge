@@ -11,11 +11,13 @@ curl -LO https://dl.k8s.io/release/v1.18.0/bin/linux/amd64/kubectl
 或者在浏览器地址栏输入 `https://dl.k8s.io/release/v1.18.0/bin/linux/amd64/kubectl`
 
 :::tip
-注意版本和 k8s 的版本不要相差 1
+注意版本和 k8s 的版本上下不要相差 1
 
 Before you begin
 You must use a kubectl version that is within one minor version difference of your cluster. For example, a v1.28 client can communicate with v1.27, v1.28, and v1.29 control planes. Using the latest compatible version of kubectl helps avoid unforeseen issues.
 :::
+
+版本对应关系：[https://github.com/kubernetes-sigs/kind/releases?page=2](https://github.com/kubernetes-sigs/kind/releases?page=2)
 
 ## 使用
 
@@ -66,4 +68,10 @@ kubectl delete deployment test-k8s
 kubectl exec -it pod-name -c container-name -- bash
 # 删除所有服务
 kubectl delete all --all
+# 查看 pods 默认是查看 default 命名空间的 pods
+kubectl get pods
+# 查看指定命名空间的 pods
+kubectl get pods -n namespace
+# 删除某个命名空间的 pods
+kubectl delete pods --all -n <namespace>
 ```
