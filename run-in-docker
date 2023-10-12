@@ -10,3 +10,6 @@ docker pull ${KB_BUILDER_IMAGE}
 docker run --rm -it -p 8080:8080 -v ${WORK_DIR}:${DOCKER_KB_PATH} \
   -w ${DOCKER_KB_PATH} \
   ${KB_BUILDER_IMAGE} bash
+
+
+# 如果没有安装 vuepress 进入容器之后需要安装一下 npm install -D vuepress

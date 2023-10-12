@@ -977,7 +977,7 @@ nodes:
         node-labels: "ingress-ready=true"
   extraPortMappings:
   - containerPort: 80
-    hostPort: 80
+    hostPort: 8888
     protocol: TCP
   - containerPort: 443
     hostPort: 443
@@ -1005,7 +1005,7 @@ WARNING: version difference between client (1.23) and server (1.21) exceeds the 
 所以这里使用 v1.3.1 版本
 
 ```shell
-# 若访问不了则翻墙下载和访问该连接 cory 内容到本地文件
+# 若访问不了则翻墙下载或访问该连接 cory 内容到本地文件
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.1/deploy/static/provider/kind/deploy.yaml
 ```
 
