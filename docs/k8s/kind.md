@@ -337,6 +337,10 @@ kubectl exec -it blogrpc-hello-67b7ff5b96-5sblb bash
 # 结果
 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
 root@blogrpc-hello-67b7ff5b96-5sblb:/app/hello#
+# 可以查看 hostname
+cat /etc/hostname
+# 结果为
+blogrpc-hello-67b7ff5b96-5sblb
 # 通过 service name 访问
 curl openapi-business:9091/ping
 # 通过 service ip 访问
@@ -1758,3 +1762,19 @@ curl http://localhost:8888/foo/hostname
 # 结果
 foo-app
 ```
+
+## 跨命名空间的 service 访问
+
+在 Kubernetes 中，通常情况下，你可以在一个命名空间的 Pod 中通过 <service-name>.<namespace> 的形式来访问另一个命名空间的 Service，而不需要显式地加上 .svc.cluster.local。这是因为 Kubernetes 默认提供了内置的 DNS 服务解析，它会自动处理这种情况。
+
+例如，如果你的 Pod 在命名空间 A 中，要访问命名空间 B 中的 Service，你可以使用以下形式：
+
+```shell
+<service-name>.<namespace-B>
+```
+
+Kubernetes DNS会自动将这个名称解析为目标 Service 的 IP 地址，并将流量路由到正确的 Service。
+
+在早期版本的 Kubernetes 中，需要使用 .svc.cluster.local 来明确指定 Service 名称的完全限定域名，但在较新的版本中，这个后缀通常是可选的，因为 Kubernetes DNS已经变得更加智能，能够自动解析 Service 名称。
+
+所以，你可以根据你的 Kubernetes 版本和配置来使用 <service-name>.<namespace> 或 <service-name>.<namespace>.svc.cluster.local，两者都应该有效，但通常来说，前者更为简洁和常见。
