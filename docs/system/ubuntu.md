@@ -1,6 +1,6 @@
 # Ubuntu18.04 系统配置
 
-## 翻墙
+## 代理
 
 ```shell
 #! /bin/bash -e
@@ -248,6 +248,42 @@ sudo snap abort 7
 
 - 收信设置，每分钟检查一次，以及时接收邮件：
 ![](./images/email-client-setting-ubuntu-3.png)
+
+## 安装 mongo client 
+
+- 前往 MongoDB 官方网站：
+
+访问 MongoDB 官方网站的下载页面，选择适用于 Ubuntu 20.04 的 MongoDB 4.2 版本的客户端软件包。
+
+MongoDB 下载页面：[https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community)
+
+![](./images/mongo-client.png)
+
+- 安装客户端：
+
+打开终端，切换到下载目录，然后解压下载的软件包。假设下载的软件包名为 mongodb-linux-x86_64-4.2.19.tgz，你可以使用以下命令：
+
+```shell
+tar -zxvf mongodb-linux-x86_64-4.2.19.tgz
+```
+
+复制到系统路径：
+
+```shell
+sudo cp -R mongodb-linux-x86_64-4.2.19/bin/* /usr/local/bin/
+```
+
+验证安装：
+
+```shell
+mongo --version
+```
+
+## 文件上传
+
+```shell
+scp /path/to/local/file username@remote_server:/path/to/remote/directory
+```
 
 ## 抓包工具
 
