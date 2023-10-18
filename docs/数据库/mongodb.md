@@ -70,3 +70,75 @@ db.getCollection("order").aggregate([
 }
 ])
 ```
+
+## 查询分析
+
+- Find
+
+```js
+db.member.find({}).skip(10000000).limit(10).sort({_id:1}).explain("executionStats")
+```
+
+- Aggregate
+
+```js
+db.getCollection('coupon').explain("executionStats").aggregate([
+  {
+    "$match": {
+      "status": "normal",
+      "$and": [
+        {
+          "$or": [
+            {
+              "source.from": {
+                "$ne": "wechatMerchant"
+              },
+              "time.type": "absolute",
+              "time.endTime": {
+                "$gt": {
+                  "$date": "2023-10-18T00:20:40.788Z"
+                }
+              },
+              "accountId": ObjectId("60bf330a2be34134653390f4"),
+              "isDeleted": false
+            },
+            {
+              "source.from": {
+                "$ne": "wechatMerchant"
+              },
+              "time.type": {
+                "$ne": "absolute"
+              },
+              "accountId": ObjectId("60bf330a2be34134653390f4"),
+              "isDeleted": false
+            },
+            {
+              "accountId": ObjectId("60bf330a2be34134653390f4"),
+              "isDeleted": false,
+              "source.from": "wechatMerchant",
+              "redeemPeriod.endAt": {
+                "$gt": {
+                  "$date": "2023-10-18T00:20:40.788Z"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "businesses.business": {
+        "$in": [
+          "wechatwork"
+        ]
+      },
+      "businesses.isEnabled": false
+    }
+  },
+  {
+    "$group": {
+      "_id": "1",
+      "n": { "$sum": 1 }
+    }
+  }
+]
+)
+```
