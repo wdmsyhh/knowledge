@@ -1,5 +1,54 @@
 # ES
 
+## 容器启动
+
+- 启动 es 和 kibana
+
+```shell
+docker run -d --name elasticsearch \
+  -p 9200:9200 \
+  -e "discovery.type=single-node" \
+  -e "ELASTIC_PASSWORD=root123" \
+  -e "ES_JAVA_OPTS=-Xmx512m -Xms512m" \
+  --net my_default \
+  docker.elastic.co/elasticsearch/elasticsearch:7.10.1
+```
+
+```shell
+docker run --rm --name kibana \
+  -p 5601:5601 \
+  -e "ELASTICSEARCH_HOST=elasticsearch" \
+  -e "ELASTICSEARCH_PORT=9200" \
+  -e "ELASTICSEARCH_USERNAME=elastic" \
+  -e "ELASTICSEARCH_PASSWORD=root123" \
+  --net my_default \
+  docker.elastic.co/kibana/kibana:7.10.1
+```
+
+```shell
+# 这将在需要时递归创建 dockerdata、kibana 和 config 这些目录，以确保它们都存在。
+sudo mkdir -p /home/dockerdata/kibana
+
+ls dockerdata/kibana/config
+
+#docker cp kibana:/usr/share/kibana/config/kibana.yml /home/dockerdata/kibana/config/kibana.yml
+sudo docker cp kibana:/usr/share/kibana/config /home/dockerdata/kibana/config
+```
+
+/host/path:/container/path
+
+```shell
+docker run --rm --name kibana \
+  -p 5601:5601 \
+  -e "ELASTICSEARCH_HOST=elasticsearch" \
+  -e "ELASTICSEARCH_PORT=9200" \
+  -e "ELASTICSEARCH_USERNAME=elastic" \
+  -e "ELASTICSEARCH_PASSWORD=root123" \
+  -v /home/dockerdata/kibana/config:/usr/share/kibana/config \
+  --net my_default \
+  docker.elastic.co/kibana/kibana:7.10.1
+```
+
 ## Nested 嵌套型
 
 nested类型是一种对象类型的特殊版本，它允许索引对象数组，独立地索引每个对象。
