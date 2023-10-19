@@ -6,6 +6,33 @@
 
 Cannot create namespace portal-tenants-shared.ec.storedValueAccount in multi-document transaction
 
+## Upsert
+
+- 使用 upsert，其中 $set 和 $setOnInsert 中不能有重复的字段。
+
+```js
+db.example.update(
+   // 查询条件
+   {
+       _id: 123,
+       "target": "member"
+   },
+   // 更新操作
+   {
+      $set: {
+         field1: "updated value",
+         field2: "updated value"
+      },
+      $setOnInsert: {
+         createdAt: new Date(),
+         createdBy: "user123"
+      }
+   },
+   // upsert 选项
+   { upsert: true }
+)
+```
+
 ## Aggregate 使用
 
 - 统计订单总金额、订单总数、买家数
