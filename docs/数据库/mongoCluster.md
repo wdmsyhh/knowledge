@@ -37,4 +37,5 @@ rs.status()
 
 :::tip
 如果在本地代码连接容器中的 mongodb 集群需要在 /etc/hosts 文件中添加 `<mongo容器IP>   mongo`，不然会连接失败。
+也可以在代码连接选项中指定 directConnection: true 使其工作，从而防止服务器委托/重定向。
 :::
