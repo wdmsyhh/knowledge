@@ -82,6 +82,12 @@ networks:
 
 - 启动 monstache
 
+[https://rwynn.github.io/monstache-site/start/#installation](https://rwynn.github.io/monstache-site/start/#installation)
+
+[https://github.com/rwynn/monstache](https://github.com/rwynn/monstache)
+
+[https://github.com/rwynn/monstache/blob/rel6/docker/test/docker-compose.test.yml](https://github.com/rwynn/monstache/blob/rel6/docker/test/docker-compose.test.yml)
+
 新建docker-compose.yml
 
 ```yml
