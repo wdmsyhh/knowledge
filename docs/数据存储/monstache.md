@@ -4,6 +4,32 @@
 用于从 Mongodb 同步数据到 Elasticsearch
 :::
 
+- 启动 Mongodb
+
+**monstache 是根据 mongodb 的 oplog 来同步数据的，所以 mongodb 需要使用集群的方式，以下方式启动一个单节点集群**
+
+新建 docker-compose.yml
+
+```yml
+version: '3'
+services:
+  mongo:
+    image: mongo:4.4
+    ports:
+      - "27016:27017"
+    # 容器启动时需要的参数配置
+    command: "--replSet rs0 --bind_ip_all"
+
+networks:
+  default:
+    external:
+      name: my_default
+
+# 启动后执行以下：
+# 1.进入容器初始化副本集执行 mongo --host mongo --eval 'rs.initiate({_id: "rs0", members: [{_id: 0, host: "mongo:27017"}]})'
+# 2.进入容器查看副本集状态执行 mongo --host mongo --eval 'rs.status()'
+```
+
 - 启动 Elasticsearch
 
     参考： [docker compose 启动 es](/数据存储/elasticsearch.md#docker-compose方式启动)
