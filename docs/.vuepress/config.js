@@ -96,11 +96,12 @@ module.exports = {
                 ],
             },
             {
-                title: '数据库',
+                title: '数据存储',
                 children: [
-                    '数据库/mongodb',
-                    '数据库/mongoCluster',
-                    '数据库/es',
+                    '数据存储/mongodb',
+                    '数据存储/mongoCluster',
+                    '数据存储/elasticsearch',
+                    '数据存储/monstache',
                 ],
             },
             {

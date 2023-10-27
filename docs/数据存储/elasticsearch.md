@@ -1,4 +1,4 @@
-# ES
+# Elasticsearch
 
 ## 启动 es
 
@@ -85,7 +85,7 @@ docker run --rm --name kibana \
   docker.elastic.co/kibana/kibana:7.10.2
 ```
 
-### docker compose 方式启动
+### docker-compose方式启动
 
 ```yml
 version: "3.7"
@@ -124,6 +124,21 @@ volumes:
 
 # 会自动创建出 elasticsearch_default 网络
 ```
+
+- Elasticsearch-head 连接 ES
+
+```shell
+# elasticsearch 需要开启跨域
+docker run --rm --name es-head \
+  -p 9100:9100 \
+  mobz/elasticsearch-head:5
+```
+
+- chrome extension
+
+这种方式，es 容器不用开启跨域。
+
+[https://chrome.google.com/webstore/search/elasticsearch%20head?utm_source=ext_app_menu](https://chrome.google.com/webstore/search/elasticsearch%20head?utm_source=ext_app_menu)
 
 ## Nested 嵌套型
 
