@@ -4,7 +4,7 @@
 用于从 Mongodb 同步数据到 Elasticsearch
 :::
 
-- 启动 Mongodb
+## 启动 Mongodb
 
 **monstache 是根据 mongodb 的 oplog 来同步数据的，所以 mongodb 需要使用集群的方式，以下方式启动一个单节点集群**
 
@@ -30,7 +30,7 @@ networks:
 # 2.进入容器查看副本集状态执行 mongo --host mongo --eval 'rs.status()'
 ```
 
-- 启动 Elasticsearch
+## 启动 Elasticsearch
 
     参考： [docker compose 启动 es](/数据存储/elasticsearch.md#docker-compose方式启动)
 
@@ -80,13 +80,7 @@ networks:
 
 执行 `docker-compose up`
 
-- 启动 monstache
-
-[https://rwynn.github.io/monstache-site/start/#installation](https://rwynn.github.io/monstache-site/start/#installation)
-
-[https://github.com/rwynn/monstache](https://github.com/rwynn/monstache)
-
-[https://github.com/rwynn/monstache/blob/rel6/docker/test/docker-compose.test.yml](https://github.com/rwynn/monstache/blob/rel6/docker/test/docker-compose.test.yml)
+## 启动 monstache
 
 新建docker-compose.yml
 
@@ -193,3 +187,11 @@ docker-compose up
 ```
 
 观察日志连接成功后去创建 `testdb` 数据库和 `member` 表，添加一条数据，es 中会新增一个 `testdb.member` 的索引，其中有新增的数据。
+
+以下是 monstache 相关文档：
+
+[https://rwynn.github.io/monstache-site/start/#installation](https://rwynn.github.io/monstache-site/start/#installation)
+
+[https://github.com/rwynn/monstache](https://github.com/rwynn/monstache)
+
+[https://github.com/rwynn/monstache/blob/rel6/docker/test/docker-compose.test.yml](https://github.com/rwynn/monstache/blob/rel6/docker/test/docker-compose.test.yml)
