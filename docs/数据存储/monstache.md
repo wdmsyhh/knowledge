@@ -32,7 +32,7 @@ networks:
 
 ## 启动 Elasticsearch
 
-    参考： [docker compose 启动 es](/数据存储/elasticsearch.md#docker-compose方式启动)
+参考： [docker compose 启动 es](/数据存储/elasticsearch.md#docker-compose方式启动)
 
 新建 docker-compose.yml
 
