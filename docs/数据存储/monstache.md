@@ -113,7 +113,7 @@ elasticsearch-urls = ["http://elasticsearch:9200"]
 # if you don't want to listen for changes to all collections in MongoDB but only a few
 # e.g. only listen for inserts, updates, deletes, and drops from mydb.mycollection
 # this setting does not initiate a copy, it is a filter on the oplog change listener only
-#namespace-regex = '^aaa\.bbb$'      #aaa表示mongodb的数据库，bbb表示集合，表示要匹配的名字空间
+#namespace-regex = '^testdb\.member$'      #testdb表示mongodb的数据库，member表示集合，表示要匹配的名字空间
 namespace-regex = '^testdb\.member$'
 
 # additionally, if you need to seed an index from a collection and not just listen for changes from the oplog
