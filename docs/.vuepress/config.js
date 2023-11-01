@@ -102,6 +102,7 @@ module.exports = {
                     '数据存储/mongoCluster',
                     '数据存储/elasticsearch',
                     '数据存储/monstache',
+                    '数据存储/redis',
                 ],
             },
             {
