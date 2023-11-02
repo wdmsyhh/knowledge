@@ -106,6 +106,12 @@ module.exports = {
                 ],
             },
             {
+                title: '消息队列',
+                children: [
+                    'mq/rocketmq',
+                ],
+            },
+            {
                 title: 'Docker',
                 children: [
                     'docker/安装',
