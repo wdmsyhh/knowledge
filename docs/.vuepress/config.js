@@ -35,6 +35,7 @@ module.exports = {
                 children: [
                     'system/ubuntu常用命令',
                     'system/ubuntu',
+                    'system/ubuntu22',
                     'system/windows',
                 ],
             },
