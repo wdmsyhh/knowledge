@@ -23,3 +23,7 @@ set-ExecutionPolicy RemoteSigned
 - 输入 Y
 
 - 查看执行策略：`get-ExecutionPolicy`
+
+## 实现虚拟机与主机之间自由粘贴和复制及文件的拖拽——VMware Tools的安装
+
+[https://zhuanlan.zhihu.com/p/158949598](https://zhuanlan.zhihu.com/p/158949598)
