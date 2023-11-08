@@ -1,4 +1,4 @@
-# Ubuntu18.04 系统配置
+# Ubuntu18.04 系统开发环境配置
 
 ## 代理
 
@@ -249,7 +249,7 @@ sudo snap abort 7
 - 收信设置，每分钟检查一次，以及时接收邮件：
 ![](./images/email-client-setting-ubuntu-3.png)
 
-## 安装 mongo client 
+## 安装 mongo client
 
 - 前往 MongoDB 官方网站：
 

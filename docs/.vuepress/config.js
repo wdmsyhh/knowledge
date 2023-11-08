@@ -31,7 +31,7 @@ module.exports = {
         sidebar: [
             'profile',
             {
-                title: '系统',
+                title: '系统开发环境',
                 children: [
                     'system/ubuntu常用命令',
                     'system/ubuntu',
