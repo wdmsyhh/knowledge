@@ -139,6 +139,12 @@ module.exports = {
                 ],
             },
             {
+                title: 'Gitlab',
+                children: [
+                    'gitlab/gitlab',
+                ],
+            },
+            {
                 title: 'K8s',
                 children: [
                     'k8s/kubectl',
