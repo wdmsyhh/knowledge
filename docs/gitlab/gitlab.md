@@ -95,7 +95,7 @@ irb(main):004:0> user.save
 方法二：
 
 点击头像
-![img.png](img.png)
+![img.png](./images/img.png)
 
 6.新建项目
 
@@ -104,7 +104,7 @@ irb(main):004:0> user.save
 7.删除项目
 
 点击要删除的项目，然后：
-![img_1.png](img_1.png)
+![img_1.png](./images/img_1.png)
 
 ```shell
 cd existing_repo
