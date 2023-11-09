@@ -151,3 +151,64 @@ gitlab-ctl reconfigure
 [docker安装 docker安装gitlab](https://blog.51cto.com/u_16099331/6419143)
 
 [官网](https://docs.gitlab.com/ee/install/docker.html)
+
+## GitLab-Runner环境安装配置
+
+```shell
+docker pull gitlab/gitlab-runner:v16.4.2
+```
+
+```shell
+docker run -d --name gitlab-runner --restart unless-stopped \
+  -v /data/gitlab-runner/config:/etc/gitlab-runner \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  gitlab/gitlab-runner:v16.4.2
+```
+
+进入容器
+
+```shell
+docker exec -it gitlab-runner /bin/bash
+
+gitlab-ci-multi-runner register
+```
+
+注册Runner
+
+```shell
+root@2c16245efcc7:/# gitlab-ci-multi-runner register
+Runtime platform                                    arch=amd64 os=linux pid=45 revision=e77af703 version=16.4.2
+Running in system-mode.
+
+Enter the GitLab instance URL (for example, https://gitlab.com/):
+#输入
+http://192.168.5.34/
+Enter the registration token:
+#输入
+GR1348941veATFuzokzpXqwyCN8uP
+Enter a description for the runner:
+#输入
+[2c16245efcc7]: test_runner
+Enter tags for the runner (comma-separated):
+#输入
+test
+Enter optional maintenance note for the runner:
+#输入
+test
+WARNING: Support for registration tokens and runner parameters in the 'register' command has been deprecated in GitLab Runner 15.6 and will be replaced with support for authentication tokens. For more information, see https://docs.gitlab.com/ee/ci/runners/new_creation_workflow
+Registering runner... succeeded                     runner=GR1348941veATFuzo
+Enter an executor: virtualbox, docker+machine, custom, docker, docker-windows, parallels, shell, ssh, kubernetes, docker-autoscaler, instance:
+#输入
+shell
+Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded!
+
+Configuration (with the authentication token) was saved in "/etc/gitlab-runner/config.toml"
+```
+
+参考：
+
+[官网](https://docs.gitlab.cn/runner/install/docker.html)
+
+[Docker + GitLab + GitLab Runner 自动化部署](https://robking.top/archives/%E4%BA%91%E5%8E%9F%E7%94%9Fdockergitlabgitlabrunner%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2)
+
+[GitLab-Runner 从安装到配置到入门](https://blog.csdn.net/zyy247796143/article/details/123842374)
