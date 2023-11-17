@@ -1778,3 +1778,9 @@ Kubernetes DNS会自动将这个名称解析为目标 Service 的 IP 地址，�
 在早期版本的 Kubernetes 中，需要使用 .svc.cluster.local 来明确指定 Service 名称的完全限定域名，但在较新的版本中，这个后缀通常是可选的，因为 Kubernetes DNS已经变得更加智能，能够自动解析 Service 名称。
 
 所以，你可以根据你的 Kubernetes 版本和配置来使用 <service-name>.<namespace> 或 <service-name>.<namespace>.svc.cluster.local，两者都应该有效，但通常来说，前者更为简洁和常见。
+
+## k8s 中使用 Apache APISIX
+
+参考：
+
+https://apisix.apache.org/zh/blog/2021/12/15/deploy-apisix-in-kubernetes/
