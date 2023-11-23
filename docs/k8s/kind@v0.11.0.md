@@ -1,4 +1,4 @@
-# kind
+# kind@v0.11.0
 
 ## 官网
 
@@ -258,6 +258,16 @@ kubectl apply -f apps.yaml
 
 ## 访问服务
 
+### 端口转发集群外访问服务
+
+```shell
+kubectl port-forward service/openapi-business 9091:9091
+
+curl localhost:9091/ping
+# 结果
+{"hostname":"openapi-business-6c89fb7b44-npt54","ip":"10.244.0.5"}
+```
+
 ### 节点外访问 openapi-business 服务。
 
 - 查看 kind 节点的 ip
@@ -277,7 +287,7 @@ curl 172.18.0.2:31111/ping
 {"hostname":"openapi-business-56c695c975-jgpj2","ip":"10.244.0.19"}
 ```
 
-可以看到每次访问获取的 hostname 和 ip 会改变，这是由于 service 的负载均衡（只能对单节点的 pod 负载均衡，如果要实现跨节点则需要负载均衡器）
+可以看到每次访问获取的 hostname 和 ip 会改变，这是由于 service 的负载均衡
 
 :::tip
 如果通过浏览器访问的时候发现一直返回的是同一个 hostname 和 ip，清除浏览器缓存再尝试，发现每次清除缓存之后再请求会返回不同的 hostname 和 ip 说明请求也到达了不同的 pod。疑问：为啥不清楚缓存每次到达的是同一个 pod?
@@ -1763,23 +1773,23 @@ curl http://localhost:8888/foo/hostname
 foo-app
 ```
 
-## 跨命名空间的 service 访问
+## 跨命名空间的service访问
 
-在 Kubernetes 中，通常情况下，你可以在一个命名空间的 Pod 中通过 <service-name>.<namespace> 的形式来访问另一个命名空间的 Service，而不需要显式地加上 .svc.cluster.local。这是因为 Kubernetes 默认提供了内置的 DNS 服务解析，它会自动处理这种情况。
+在 Kubernetes 中，通常情况下，你可以在一个命名空间的 Pod 中通过 `service-name.namespace` 的形式来访问另一个命名空间的 Service，而不需要显式地加上 .svc.cluster.local。这是因为 Kubernetes 默认提供了内置的 DNS 服务解析，它会自动处理这种情况。
 
 例如，如果你的 Pod 在命名空间 A 中，要访问命名空间 B 中的 Service，你可以使用以下形式：
 
-```shell
-<service-name>.<namespace-B>
+```text
+service-name.namespace-B
 ```
 
 Kubernetes DNS会自动将这个名称解析为目标 Service 的 IP 地址，并将流量路由到正确的 Service。
 
 在早期版本的 Kubernetes 中，需要使用 .svc.cluster.local 来明确指定 Service 名称的完全限定域名，但在较新的版本中，这个后缀通常是可选的，因为 Kubernetes DNS已经变得更加智能，能够自动解析 Service 名称。
 
-所以，你可以根据你的 Kubernetes 版本和配置来使用 <service-name>.<namespace> 或 <service-name>.<namespace>.svc.cluster.local，两者都应该有效，但通常来说，前者更为简洁和常见。
+所以，你可以根据你的 Kubernetes 版本和配置来使用 service-name.namespace 或 service-name.namespace.svc.cluster.local，两者都应该有效，但通常来说，前者更为简洁和常见。
 
-## k8s 中使用 Apache APISIX
+## k8s中使用Apache-APISIX
 
 参考：
 

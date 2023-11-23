@@ -106,3 +106,14 @@ helm search repo bitnami-full/mongodb --versions
 ```shell
 helm install mongo bitnami-full-index/mongodb --version 8.3.2 --set architecture="replicaset",auth.rootPassword="root"
 ```
+
+## 安装Mysql
+
+- 查看
+
+```shell
+helm search repo stable/mysql
+# 结果
+NAME        	CHART VERSION	APP VERSION	DESCRIPTION
+stable/mysql	0.3.5        	           	Fast, reliable, scalable, and easy to use open-...
+```
