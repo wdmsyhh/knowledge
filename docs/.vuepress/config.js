@@ -129,6 +129,7 @@ module.exports = {
                 title: '日志采集',
                 children: [
                     '日志采集/filebeat/filebeat.md',
+                    '日志采集/journalctl/journalctl.md',
                 ],
             },
             {
