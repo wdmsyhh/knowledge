@@ -126,6 +126,12 @@ module.exports = {
                 ],
             },
             {
+                title: '日志采集',
+                children: [
+                    '日志采集/filebeat/filebeat.md',
+                ],
+            },
+            {
                 title: 'Nginx',
                 children: [
                     'nginx/reverseProxy',
