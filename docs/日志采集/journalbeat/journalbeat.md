@@ -14,8 +14,7 @@ tar xzvf journalbeat-7.10.2-linux-x86_64.tar.gz
 - 启动Elasticsearch和Kibana
 
 :::tip
-注意版本需要与journalbeat保持一致。
-已容器的方式启动设置在同一个 network: my_default
+注意版本需要与journalbeat保持一致。容器的方式启动设置在同一个 network: my_default
 :::
 
 - 修改配置journalbeat.yml
