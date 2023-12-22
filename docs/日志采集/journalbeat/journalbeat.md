@@ -127,7 +127,7 @@ output.elasticsearch:
 chown root:root journalbeat.yml
 ```
 
-- 启动filebeat
+- 修改journalbeat
 
 ```shell
 ./journalbeat -e -c ./journalbeat.yml
