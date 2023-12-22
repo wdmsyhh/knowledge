@@ -80,6 +80,68 @@ docker run --name journald_logging --log-driver journald hello-world
 docker start journald_logging
 ```
 
+## 使用docker方式启动journalbeat
+
+### 测试步骤
+
+- 启动一个容器
+
+```shell
+docker run --rm \
+  --name=test-ubuntu \
+  --volume="/var/log/journal:/var/log/journal" \
+  --volume="/etc/machine-id:/etc/machine-id" \
+  --volume="/run/systemd:/run/systemd" \
+  --volume="/etc/hostname:/etc/hostname:ro" \
+  --net my_default \
+  phusion/baseimage:focal-1.1.0
+
+# 赋值journal到容器内根目录
+docker cp journalbeat-7.10.2-linux-x86_64 test-ubuntu:/
+# 进入容器
+docker exec -it test-ubuntu bash
+# 进入目录
+cd journalbeat-7.10.2-linux-x86_64
+# 修改配置
+vim journalbeat.yml
+```
+
+配置
+
+```yml
+journalbeat.inputs:
+  - id: docker.service
+    paths: []
+    include_matches:
+      - _SYSTEMD_UNIT=docker.service
+    seek: cursor
+
+output.elasticsearch:
+  hosts: ['elasticsearch:9200']
+```
+
+- 修改journalbeat.yml所有者和所属组
+
+```shell
+chown root:root journalbeat.yml
+```
+
+- 启动filebeat
+
+```shell
+./journalbeat -e -c ./journalbeat.yml
+```
+
+- 观察Kibana
+
+![](./images/image-4.png)
+
+- 再次启动日志容器观察Kibana
+
+```shell
+docker start journald_logging
+```
+
 ### 升级用法
 
 可以使用容器的方式运行journalbeat采集日志到logstash，再通过logstash发送到日志服务（阿里云或腾讯云）
