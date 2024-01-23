@@ -165,6 +165,54 @@ docker run --rm --name es-head \
 }
 ```
 
+## Should 查询
+
+```json
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "accountId": "5e7872a773ee1200fb1bec32"
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "bool": {
+                  "must_not": [
+                    {
+                      "exists": {
+                        "field": "classificationIds"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "bool": {
+                  "must": [
+                    {
+                      "terms": {
+                        "classificationIds": [
+                          "64ae588e2a83850038c57162"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
 ## Nested 嵌套型
 
 nested类型是一种对象类型的特殊版本，它允许索引对象数组，独立地索引每个对象。
