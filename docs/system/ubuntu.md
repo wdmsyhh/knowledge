@@ -9,6 +9,7 @@ Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|0.0.0.0|:443
 输入`raw.githubusercontent.com`查询IP地址
 
 修改hosts Ubuntu:
+
 ```shell
 sudo vim /etc/hosts
 ```
@@ -35,6 +36,35 @@ sudo vim /etc/hosts
 151.101.76.133 avatars8.githubusercontent.com
 # GitHub End
 ```
+
+## github 无法访问问题
+
+使用 `git pull` 报错：
+
+ssh: connect to host github.com port 22: Operation timed out fatal: 无法读取远程仓库。
+
+1. `ping github.com` 无法ping通
+
+2. `nslookup github.com 1.1.1.1` 拿到github的真是ip
+
+```text
+Server:         1.1.1.1
+Address:        1.1.1.1#53
+
+Non-authoritative answer:
+Name:   github.com
+Address: 192.30.255.113
+```
+
+3. 修改 hosts
+
+```text
+sudo vim /etc/hosts
+
+192.30.255.113 github.com
+```
+
+4. 再次 `ping github.com` ping通
 
 ## 代理
 
