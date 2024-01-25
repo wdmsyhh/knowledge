@@ -18,9 +18,11 @@ docker run --name elasticsearch -p 9200:9200 -p 9300:9300 \
 # 进入容器安装 ik 分词器
 ./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.10.2/elasticsearch-analysis-ik-7.10.2.zip
 ```
+
 ## 启动 kibana
 
 默认可以直接连接容器名为 elasticsearch 的 es
+
 ```shell
 docker run \
     --rm \
@@ -45,18 +47,18 @@ PUT es_test?include_type_name=true
     "mappings" : {
         "_doc" : {
             "properties" : {
-              "count": {          
-                   "type": "text"       
+              "count": {
+                   "type": "text"
                },
               "id": {
                    "type": "integer"
                },
                "name": {
                     "type" : "text",
-                    "analyzer": "ik_smart"                   
+                    "analyzer": "ik_smart"
                 },
                 "color" : {
-                    "type" : "text"                    
+                    "type" : "text"
                 }
             }
         }
@@ -101,11 +103,11 @@ log_bin = /var/lib/mysql/mysql_bin
 binlog_format = ROW
 # 重启 mysql
 # MySQL添加canal用户并授权,canal的原理是模拟自己为mysql slave，所以需要mysql slave的相关权限
-CREATE USER canal IDENTIFIED BY 'canal';    
+CREATE USER canal IDENTIFIED BY 'canal';
 
-GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'canal'@'%';  
+GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'canal'@'%';
 
-FLUSH PRIVILEGES; 
+FLUSH PRIVILEGES;
 # 校验用户对应权限
 show master status;
 ```
@@ -141,6 +143,7 @@ tar -zxvf canal.deployer-1.1.5.tar.gz -C canal.deployer-1.1.5
 # 修改配置
 vi conf/example/instance.properties
 ```
+
 需要修改的内容
 
 ```text
@@ -151,6 +154,7 @@ canal.instance.dbPassword=root123
 ```
 
 启动
+
 ```shell
 ./bin/startup.sh
 cat logs/canal/canal.log
@@ -168,6 +172,7 @@ vi conf/application.yml
 ```
 
 需要改动的配置
+
 ```
   srcDataSources:
     defaultDS:
@@ -185,6 +190,7 @@ vi conf/application.yml
 ```
 
 同样的方式，修改conf/es/*.yml文件，定义MySQL数据到ES数据的映射字段。
+
 ```
 dataSourceKey: defaultDS
 destination: example
@@ -220,11 +226,14 @@ insert `es_test`(`count`,`id`,`name`,`color`) values('11',2,'canal_test2','red')
 
 # references
 
-https://help.aliyun.com/zh/es/use-cases/use-canal-to-synchronize-mysql-data-to-alibaba-cloud-elasticsearch
+[https://github.com/alibaba/canal](https://github.com/alibaba/canal)
 
-https://weikeqin.com/2018/05/16/canal-notes/
+[https://help.aliyun.com/zh/es/use-cases/use-canal-to-synchronize-mysql-data-to-alibaba-cloud-elasticsearch](https://help.aliyun.com/zh/es/use-cases/use-canal-to-synchronize-mysql-data-to-alibaba-cloud-elasticsearch)
 
-https://blog.csdn.net/weixin_44606481/article/details/133344235
+[https://weikeqin.com/2018/05/16/canal-notes/](https://weikeqin.com/2018/05/16/canal-notes/)
 
-https://github.com/alibaba/canal/issues/3466#issuecomment-1049509123
+[https://blog.csdn.net/weixin_44606481/article/details/133344235](https://blog.csdn.net/weixin_44606481/article/details/133344235)
 
+[https://github.com/alibaba/canal/issues/3466#issuecomment-1049509123](https://github.com/alibaba/canal/issues/3466#issuecomment-1049509123)
+
+[https://github.com/medcl/elasticsearch-analysis-ik/issues/848](https://github.com/medcl/elasticsearch-analysis-ik/issues/848)
