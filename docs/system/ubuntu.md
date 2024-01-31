@@ -107,6 +107,7 @@ sudo apt -y install fcitx-libs libfcitx-qt0 libopencc2 libopencc2-data libqt4-op
 ```
 
 - 下载搜狗拼音。
+
 :::tip
 只能下载2.3版本（或者其他2.x版本）的，不要下载官网3.x或者4.x版本，不然安装了也用不了，这是最关键的一点，切记！！！
 :::
@@ -228,6 +229,14 @@ du -h --max-depth=1
 - 继续进入较大的目录执行如上命令。
 
 ![](./images/image5.png)
+
+- 安目录大小排序
+
+```shell
+du -h --max-depth=1 | sort -rh
+#按目录大小排序取前 10 条
+du -h --max-depth=1 | sort -rh | head -n 11
+```
 
 - 所有文件从大到小展示。
 
