@@ -2,6 +2,8 @@
 
 ## 解决GitHub的raw.githubusercontent.com无法连接问题
 
+aaa
+
 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|0.0.0.0|:443... failed: Connection refused.
 
 在 [https://site.ip138.com/raw.Githubusercontent.com/](https://site.ip138.com/raw.Githubusercontent.com/)
