@@ -2,7 +2,7 @@
 
 ## 解决GitHub的raw.githubusercontent.com无法连接问题
 
-aaa
+aaaa
 
 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|0.0.0.0|:443... failed: Connection refused.
 
