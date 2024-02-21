@@ -3,6 +3,7 @@
 ## Docker 方式启动 nginx
 
 - 获取镜像
+
 ```shell
 # 下载最新版Nginx镜像 (其实此命令就等同于 : docker pull nginx:latest )
 docker pull nginx
@@ -11,14 +12,20 @@ docker pull nginx:xxx
 ```
 
 - 启动容器
+
 ```shell
 docker run -itd --name nginx -p 80:80 nginx
 ```
 
 - 进入容器
+
 ```shell
 docker exec -it nginx bash
+#安装vim
+sudo apt update
+sudo apt install vim
 ```
+
 配置文件是 `/etc/nginx/nginx.conf`
 
 执行 `cat /etc/nginx/nginx.conf` 可以看到最后一行是 `include /etc/nginx/conf.d/*.conf;`
@@ -26,6 +33,7 @@ docker exec -it nginx bash
 默认的 server 配置在 `/etc/nginx/conf.d` 中
 
 反向代理配置，把 `/etc/nginx/conf.d/default.conf` 内容改成：
+
 ```
 server {
     listen       80;
@@ -48,12 +56,15 @@ server {
 ```
 
 修改配置后执行：
+
 ```shell
 nginx -s reload
 ```
+
 或者退出容器重启容器
 
 我的简单实践：
+
 ```
 server {
     listen       80;
