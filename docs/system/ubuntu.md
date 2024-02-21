@@ -285,6 +285,24 @@ ps -ef | grep bluebell
 
 - [https://www.runoob.com/w3cnote/nvm-manager-node-versions.html](https://www.runoob.com/w3cnote/nvm-manager-node-versions.html)
 
+## 安装Yarn
+
+```shell
+#如果已经安装了旧版本的 Yarn，你可以先将其移除
+sudo apt remove yarn
+#添加 Yarn 的 APT 存储库
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+#更新包列表
+sudo apt update
+#安装 Yarn
+sudo apt install yarn
+#安装指定版本的 Yarn
+sudo apt install yarn=1.22.10-1
+#验证安装
+yarn --version
+```
+
 ## 软件商店安装软件问题
 
 - Unable to install "Visual Studio Code": snap "code" has "install-snap" change in progress
