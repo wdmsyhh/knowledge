@@ -1,4 +1,4 @@
-# 进军 DevOps
+# 自动部署
 
 ## jenkins + GitHub 实现项目自动化部署
 
@@ -17,6 +17,10 @@ java -jar jenkins.war --httpPort=8080
 - [Jenkins 系列教程-史上最简单Jenkins教程，教你一天学会使用Jenkins利器](https://blog.csdn.net/qq_32352777/article/details/109267847)
 - [jenkins部署go程序(自动编译部署)](https://juejin.cn/post/6952765925388976165)
 - [jenkins + GitHub 实现项目自动化部署](https://learnku.com/articles/44764)
+
+:::tip
+在配置项目时候 Source Code Management 中 Git 的 Credentials 配置老是失败，还没找到原因，解决办法是在服务器生成 ssh key 添加到了 github，然后就 Credentials 就选择了 none
+:::
 
 ## jenkins执行脚本npm: command not found解决
 
