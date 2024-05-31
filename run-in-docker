@@ -3,7 +3,8 @@ WORK_DIR=${WORK_DIR:-`cd ${0%/*};pwd`}
 DOCKER_KB_PATH=/src/knowledge
 ENV=${ENV:-local}
 KB_BUILDER_IMAGE=node:16.20.2
-GEN_DIST_COMMAND="npm run docs:build"
+GEN_DIST_COMMAND_BUILD="npm run docs:build"
+GEN_DIST_COMMAND_RUN="npm run docs:dev"
 
 docker pull ${KB_BUILDER_IMAGE}
 
@@ -12,4 +13,4 @@ docker run --rm -it -p 8080:8080 -v ${WORK_DIR}:${DOCKER_KB_PATH} \
   ${KB_BUILDER_IMAGE} bash
 
 
-# 如果没有安装 vuepress 进入容器之后需要安装一下 npm install -D vuepress
+# 如果使用 Node 镜像没有安装 vuepress 进入容器之后需要安装一下 npm install -D vuepress
