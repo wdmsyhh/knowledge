@@ -1,5 +1,13 @@
 # Goland
 
+## 常用快捷键
+
+- 选中方法点击 `Ctrl+Enter` 可以添加该方法的测试代码
+
+- 选中一段代码点击 `Command+Alt+M` 提取方法
+
+- 测试代码文件中点击 `Ctrl+Enter` 添加测试代码
+
 ## 常用插件
 
 ![](./images/goland/1.png)
