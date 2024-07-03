@@ -1,0 +1,12 @@
+#! /bin/bash -e
+WORK_DIR=${WORK_DIR:-`cd ${0%/*};pwd`}
+DOCKER_KB_PATH=/src/knowledge
+ENV=${ENV:-local}
+KB_BUILDER_IMAGE=node:16.20.2
+GEN_DIST_COMMAND_BUILD="npm run docs:build"
+
+docker pull ${KB_BUILDER_IMAGE}
+
+docker run --rm -it -v ${WORK_DIR}:${DOCKER_KB_PATH} \
+  -w ${DOCKER_KB_PATH} \
+  ${KB_BUILDER_IMAGE} ${GEN_DIST_COMMAND_BUILD}
