@@ -3676,9 +3676,9 @@
   "resolved" "https://registry.npmmirror.com/es6-promise/-/es6-promise-4.2.8.tgz"
   "version" "4.2.8"
 
-"esbuild-linux-64@0.14.7":
-  "integrity" "sha512-+Lvz6x+8OkRk3K2RtZwO+0a92jy9si9cUea5Zoru4yJ/6EQm9ENX5seZE0X9DTwk1dxJbjmLsJsd3IoowyzgVg=="
-  "resolved" "https://registry.npmmirror.com/esbuild-linux-64/-/esbuild-linux-64-0.14.7.tgz"
+"esbuild-linux-arm64@0.14.7":
+  "integrity" "sha512-kJd5beWSqteSAW086qzCEsH6uwpi7QRIpzYWHzEYwKKu9DiG1TwIBegQJmLpPsLp4v5RAFjea0JAmAtpGtRpqg=="
+  "resolved" "https://registry.npmmirror.com/esbuild-linux-arm64/-/esbuild-linux-arm64-0.14.7.tgz"
   "version" "0.14.7"
 
 "esbuild@>=0.13", "esbuild@0.14.7":

@@ -9,4 +9,4 @@ docker pull ${KB_BUILDER_IMAGE}
 
 docker run --rm -it -v ${WORK_DIR}:${DOCKER_KB_PATH} \
   -w ${DOCKER_KB_PATH} \
-  ${KB_BUILDER_IMAGE} ${GEN_DIST_COMMAND_BUILD}
+  ${KB_BUILDER_IMAGE} sh -c 'npm install -D vuepress && npm run docs:build'
