@@ -2,7 +2,7 @@
 WORK_DIR=${WORK_DIR:-`cd ${0%/*};pwd`}
 DOCKER_KB_PATH=/src/knowledge
 ENV=${ENV:-local}
-KB_BUILDER_IMAGE=node:16.20.2
+KB_BUILDER_IMAGE=node:16
 GEN_DIST_COMMAND_BUILD="npm run docs:build"
 
 docker pull ${KB_BUILDER_IMAGE}
