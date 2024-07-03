@@ -4,7 +4,7 @@
 
 - 到主页新grpc项目
 
-- 导入proto文件和依赖的目录
+- 导入proto文件和依赖的目录。
 
 例如导入 member.proto
 
