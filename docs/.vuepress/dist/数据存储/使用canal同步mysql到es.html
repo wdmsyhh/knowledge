@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用canal同步mysql数据到es | BLOG（更新中...）</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.bfaa3857.css" as="style"><link rel="preload" href="/assets/js/app.a4d17fdc.js" as="script"><link rel="preload" href="/assets/js/2.d8080fc6.js" as="script"><link rel="preload" href="/assets/js/1.dbeab0c4.js" as="script"><link rel="preload" href="/assets/js/85.700ef9c5.js" as="script"><link rel="prefetch" href="/assets/js/10.c56cb41a.js"><link rel="prefetch" href="/assets/js/11.9bf26a77.js"><link rel="prefetch" href="/assets/js/12.645c576c.js"><link rel="prefetch" href="/assets/js/13.e6001728.js"><link rel="prefetch" href="/assets/js/14.7d034093.js"><link rel="prefetch" href="/assets/js/15.1ea20ef1.js"><link rel="prefetch" href="/assets/js/16.a721e132.js"><link rel="prefetch" href="/assets/js/17.2426b936.js"><link rel="prefetch" href="/assets/js/18.ee75ebc3.js"><link rel="prefetch" href="/assets/js/19.e10d86e3.js"><link rel="prefetch" href="/assets/js/20.ec965f0a.js"><link rel="prefetch" href="/assets/js/21.a2e3b6ad.js"><link rel="prefetch" href="/assets/js/22.ae7cb6be.js"><link rel="prefetch" href="/assets/js/23.69b22c2d.js"><link rel="prefetch" href="/assets/js/24.f8352241.js"><link rel="prefetch" href="/assets/js/25.2efbbb8b.js"><link rel="prefetch" href="/assets/js/26.426120ac.js"><link rel="prefetch" href="/assets/js/27.49390b71.js"><link rel="prefetch" href="/assets/js/28.2a53e693.js"><link rel="prefetch" href="/assets/js/29.87772818.js"><link rel="prefetch" href="/assets/js/3.2d969418.js"><link rel="prefetch" href="/assets/js/30.78d54562.js"><link rel="prefetch" href="/assets/js/31.d2711f5f.js"><link rel="prefetch" href="/assets/js/32.a56df834.js"><link rel="prefetch" href="/assets/js/33.d53cf199.js"><link rel="prefetch" href="/assets/js/34.b434c52c.js"><link rel="prefetch" href="/assets/js/35.1174b64f.js"><link rel="prefetch" href="/assets/js/36.677d3bef.js"><link rel="prefetch" href="/assets/js/37.2ac0b5a7.js"><link rel="prefetch" href="/assets/js/38.627adc32.js"><link rel="prefetch" href="/assets/js/39.f6a0ee1b.js"><link rel="prefetch" href="/assets/js/4.f8d5b16c.js"><link rel="prefetch" href="/assets/js/40.ea3c9bde.js"><link rel="prefetch" href="/assets/js/41.e7107c29.js"><link rel="prefetch" href="/assets/js/42.c63e00a4.js"><link rel="prefetch" href="/assets/js/43.776fec11.js"><link rel="prefetch" href="/assets/js/44.3aec899f.js"><link rel="prefetch" href="/assets/js/45.77e8b26c.js"><link rel="prefetch" href="/assets/js/46.3461b082.js"><link rel="prefetch" href="/assets/js/47.2b6562a7.js"><link rel="prefetch" href="/assets/js/48.88a7df79.js"><link rel="prefetch" href="/assets/js/49.4b15bfb9.js"><link rel="prefetch" href="/assets/js/5.e5bede36.js"><link rel="prefetch" href="/assets/js/50.9e1d8d4b.js"><link rel="prefetch" href="/assets/js/51.a993ad70.js"><link rel="prefetch" href="/assets/js/52.dbc6a4c1.js"><link rel="prefetch" href="/assets/js/53.91e5105c.js"><link rel="prefetch" href="/assets/js/54.963832ff.js"><link rel="prefetch" href="/assets/js/55.fd19e7ba.js"><link rel="prefetch" href="/assets/js/56.f7d21409.js"><link rel="prefetch" href="/assets/js/57.4a9cb216.js"><link rel="prefetch" href="/assets/js/58.ca6bc0ad.js"><link rel="prefetch" href="/assets/js/59.1265a34b.js"><link rel="prefetch" href="/assets/js/6.2646630f.js"><link rel="prefetch" href="/assets/js/60.624d6c26.js"><link rel="prefetch" href="/assets/js/61.1591ddcb.js"><link rel="prefetch" href="/assets/js/62.ac5cc8ae.js"><link rel="prefetch" href="/assets/js/63.1ea6ba77.js"><link rel="prefetch" href="/assets/js/64.e303231e.js"><link rel="prefetch" href="/assets/js/65.ed115b78.js"><link rel="prefetch" href="/assets/js/66.1546e903.js"><link rel="prefetch" href="/assets/js/67.4e2b81d6.js"><link rel="prefetch" href="/assets/js/68.6edca18c.js"><link rel="prefetch" href="/assets/js/69.10260310.js"><link rel="prefetch" href="/assets/js/7.62e8c4ff.js"><link rel="prefetch" href="/assets/js/70.18416266.js"><link rel="prefetch" href="/assets/js/71.dbdf3f8d.js"><link rel="prefetch" href="/assets/js/72.449ece5e.js"><link rel="prefetch" href="/assets/js/73.d0cf1522.js"><link rel="prefetch" href="/assets/js/74.9d25785f.js"><link rel="prefetch" href="/assets/js/75.89e88e63.js"><link rel="prefetch" href="/assets/js/76.a287aef5.js"><link rel="prefetch" href="/assets/js/77.191a1f7a.js"><link rel="prefetch" href="/assets/js/78.0d8186c0.js"><link rel="prefetch" href="/assets/js/79.002e5ca7.js"><link rel="prefetch" href="/assets/js/80.73b1461d.js"><link rel="prefetch" href="/assets/js/81.ad2a7911.js"><link rel="prefetch" href="/assets/js/82.f8ef78c7.js"><link rel="prefetch" href="/assets/js/83.194cc069.js"><link rel="prefetch" href="/assets/js/84.3e8b63a6.js"><link rel="prefetch" href="/assets/js/86.0a0a5995.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.8c6c977a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.bfaa3857.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">BLOG（更新中...）</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  【Home】
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  【Home】
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/profile.html" class="sidebar-link">说明</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>系统开发环境</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/git/git.html" class="sidebar-link">Git</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>开发工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Golang</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>gRPC</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>数据存储</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/数据存储/mongodb.html" class="sidebar-link">Mongodb</a></li><li><a href="/数据存储/mongoCluster.html" class="sidebar-link">Mongodb 集群</a></li><li><a href="/数据存储/elasticsearch.html" class="sidebar-link">Elasticsearch</a></li><li><a href="/数据存储/monstache.html" class="sidebar-link">Monstache</a></li><li><a href="/数据存储/redis.html" class="sidebar-link">Redis</a></li><li><a href="/数据存储/使用canal同步mysql到es.html" class="active sidebar-link">使用canal同步mysql数据到es</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/数据存储/使用canal同步mysql到es.html#使用阿里云ecs实例" class="sidebar-link">使用阿里云ECS实例</a></li><li class="sidebar-sub-header"><a href="/数据存储/使用canal同步mysql到es.html#启动es" class="sidebar-link">启动ES</a></li><li class="sidebar-sub-header"><a href="/数据存储/使用canal同步mysql到es.html#启动-kibana" class="sidebar-link">启动 kibana</a></li><li class="sidebar-sub-header"><a href="/数据存储/使用canal同步mysql到es.html#启动mysql" class="sidebar-link">启动mysql</a></li><li class="sidebar-sub-header"><a href="/数据存储/使用canal同步mysql到es.html#安装jdk" class="sidebar-link">安装JDK</a></li><li class="sidebar-sub-header"><a href="/数据存储/使用canal同步mysql到es.html#安装canal" class="sidebar-link">安装canal</a></li><li class="sidebar-sub-header"><a href="/数据存储/使用canal同步mysql到es.html#验证增量数据同步" class="sidebar-link">验证增量数据同步</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>消息队列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>API网关</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Docker</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>日志采集</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Nginx</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Jenkins</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Gitlab</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>K8s</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>阿里云</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/开发工具/内网穿透.html" class="sidebar-link">内网穿透</a></li><li><a href="/chatgpt/chatgpt.html" class="sidebar-link">ChatGPT</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="使用canal同步mysql数据到es"><a href="#使用canal同步mysql数据到es" class="header-anchor">#</a> 使用canal同步mysql数据到es</h1> <h2 id="使用阿里云ecs实例"><a href="#使用阿里云ecs实例" class="header-anchor">#</a> 使用阿里云ECS实例</h2> <h2 id="启动es"><a href="#启动es" class="header-anchor">#</a> 启动ES</h2> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 创建网络</span>
+<span class="token function">docker</span> network create my_default
+
+<span class="token function">docker</span> run <span class="token parameter variable">--name</span> elasticsearch <span class="token parameter variable">-p</span> <span class="token number">9200</span>:9200 <span class="token parameter variable">-p</span> <span class="token number">9300</span>:9300 <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token string">&quot;discovery.type=single-node&quot;</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token string">&quot;xpack.security.enabled=false&quot;</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token string">&quot;ES_JAVA_OPTS=-Xmx512m -Xms512m&quot;</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--net</span> my_default <span class="token punctuation">\</span>
+    docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+
+<span class="token comment"># 进入容器安装 ik 分词器</span>
+./bin/elasticsearch-plugin <span class="token function">install</span> https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.10.2/elasticsearch-analysis-ik-7.10.2.zip
+</code></pre></div><h2 id="启动-kibana"><a href="#启动-kibana" class="header-anchor">#</a> 启动 kibana</h2> <p>默认可以直接连接容器名为 elasticsearch 的 es</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">docker</span> run <span class="token punctuation">\</span>
+    <span class="token parameter variable">--rm</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span> kibana <span class="token punctuation">\</span>
+    <span class="token parameter variable">--net</span> my_default <span class="token punctuation">\</span>
+    <span class="token parameter variable">-p</span> <span class="token number">5601</span>:5601 <span class="token punctuation">\</span>
+    docker.elastic.co/kibana/kibana:7.10.2
+</code></pre></div><ul><li>创建索引</li></ul> <div class="language- extra-class"><pre class="language-text"><code>PUT es_test?include_type_name=true
+{
+
+    &quot;settings&quot; : {
+      &quot;index&quot; : {
+        &quot;number_of_shards&quot; : &quot;5&quot;,
+        &quot;number_of_replicas&quot; : &quot;1&quot;
+      }
+    },
+    &quot;mappings&quot; : {
+        &quot;_doc&quot; : {
+            &quot;properties&quot; : {
+              &quot;count&quot;: {
+                   &quot;type&quot;: &quot;text&quot;
+               },
+              &quot;id&quot;: {
+                   &quot;type&quot;: &quot;integer&quot;
+               },
+               &quot;name&quot;: {
+                    &quot;type&quot; : &quot;text&quot;,
+                    &quot;analyzer&quot;: &quot;ik_smart&quot;
+                },
+                &quot;color&quot; : {
+                    &quot;type&quot; : &quot;text&quot;
+                }
+            }
+        }
+    }
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>POST _analyze
+{
+  &quot;analyzer&quot;:&quot;ik_max_word&quot;,
+  &quot;text&quot;: &quot;南京市长江大桥&quot;
+}
+
+GET /_cat/indices
+
+
+GET es_test/_search
+</code></pre></div><h2 id="启动mysql"><a href="#启动mysql" class="header-anchor">#</a> 启动mysql</h2> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">docker</span> run <span class="token parameter variable">-itd</span> <span class="token parameter variable">--name</span> mysql-test <span class="token parameter variable">-p</span> <span class="token number">3306</span>:3306 <span class="token parameter variable">--network</span> my_default --network-alias mysql <span class="token parameter variable">-e</span> <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span>root123 mysql:5.7
+
+<span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> mysql-test <span class="token function">bash</span>
+
+mysql <span class="token parameter variable">-u</span> root <span class="token parameter variable">-p</span>
+
+show databases<span class="token punctuation">;</span>
+
+CREATE DATABASE es<span class="token punctuation">;</span>
+
+<span class="token comment"># 查看是否开启binlog</span>
+SHOW VARIABLES LIKE <span class="token string">'%log_bin%'</span><span class="token punctuation">;</span>
+<span class="token comment">#开启配置binlog日志</span>
+<span class="token comment"># 在centos中mysql的配置文件一般都在/etc/mysql目录下，如果不在可以通过 find / -name &quot;my.cnf&quot; 查找</span>
+<span class="token function">vi</span> /etc/mysql/my.cnf
+<span class="token comment"># 添加</span>
+server-id<span class="token operator">=</span><span class="token number">1</span>
+log_bin <span class="token operator">=</span> /var/lib/mysql/mysql_bin
+binlog_format <span class="token operator">=</span> ROW
+<span class="token comment"># 重启 mysql</span>
+<span class="token comment"># MySQL添加canal用户并授权,canal的原理是模拟自己为mysql slave，所以需要mysql slave的相关权限</span>
+CREATE <span class="token environment constant">USER</span> canal IDENTIFIED BY <span class="token string">'canal'</span><span class="token punctuation">;</span>
+
+GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO <span class="token string">'canal'</span>@<span class="token string">'%'</span><span class="token punctuation">;</span>
+
+FLUSH PRIVILEGES<span class="token punctuation">;</span>
+<span class="token comment"># 校验用户对应权限</span>
+show master status<span class="token punctuation">;</span>
+</code></pre></div><h2 id="安装jdk"><a href="#安装jdk" class="header-anchor">#</a> 安装JDK</h2> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">sudo</span> yum <span class="token function">install</span> java-1.8.0-openjdk-devel.x86_64
+</code></pre></div><p>配置环境变量</p> <div class="language- extra-class"><pre class="language-text"><code>vim ~/.bash_profile
+
+# 添加
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.362.b08-1.el7_9.x86_64
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin
+
+#使生效
+source ~/.bash_profile
+</code></pre></div><h2 id="安装canal"><a href="#安装canal" class="header-anchor">#</a> 安装canal</h2> <ul><li>安装deployer</li></ul> <div class="language- extra-class"><pre class="language-text"><code>wget https://github.com/alibaba/canal/releases/download/canal-1.1.5/canal.deployer-1.1.5.tar.gz
+mkdir canal.deployer-1.1.5
+tar -zxvf canal.deployer-1.1.5.tar.gz -C canal.deployer-1.1.5
+# 修改配置
+vi conf/example/instance.properties
+</code></pre></div><p>需要修改的内容</p> <div class="language-text extra-class"><pre class="language-text"><code>canal.instance.master.address=8.222.134.206:3306
+
+canal.instance.dbUsername=root
+canal.instance.dbPassword=root123
+</code></pre></div><p>启动</p> <div class="language-shell extra-class"><pre class="language-shell"><code>./bin/startup.sh
+<span class="token function">cat</span> logs/canal/canal.log
+</code></pre></div><ul><li>安装adapter</li></ul> <div class="language- extra-class"><pre class="language-text"><code>wget https://github.com/alibaba/canal/releases/download/canal-1.1.5/canal.adapter-1.1.5.tar.gz
+mkdir canal.adapter-1.1.5
+tar -zxvf canal.adapter-1.1.5.tar.gz -C canal.adapter-1.1.5
+
+# 修改配置
+vi conf/application.yml
+</code></pre></div><p>需要改动的配置</p> <div class="language- extra-class"><pre class="language-text"><code>  srcDataSources:
+    defaultDS:
+      url: jdbc:mysql://8.222.134.206:3306/es?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;useSSL=false
+      # url: jdbc:mysql://8.222.134.206:3306/es?useUnicode=true
+      username: canal
+      password: canal
+
+      - name: es7
+        hosts: 8.222.134.206:9200
+        properties:
+          mode: rest
+          # security.auth: test:123456 #  only used for rest mode
+          cluster.name: elasticsearch
+</code></pre></div><p>同样的方式，修改conf/es/*.yml文件，定义MySQL数据到ES数据的映射字段。</p> <div class="language- extra-class"><pre class="language-text"><code>dataSourceKey: defaultDS
+destination: example
+groupId: g1
+esMapping:
+  _index: es_test
+  _type: _doc
+  _id: _id
+  sql: &quot;select t.id as _id,t.id,t.count,t.name,t.color from es_test t&quot;
+  commitBatch: 3000
+</code></pre></div><ul><li>启动Canal-adapter服务，并查看日志。</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>./bin/startup.sh
+<span class="token function">cat</span> logs/adapter/adapter.log
+</code></pre></div><p>Q：启动Canal-adapter时，adapter.log日志显示异常，如何解决？错误日志为：java.lang.RuntimeException: java.lang.RuntimeException: java.lang.ClassCastException: com.alibaba.druid.pool.DruidDataSource cannot be cast to com.alibaba.druid.pool.DruidDataSource</p> <p>at com.alibaba.otter.canal.client.adapter.es7x.ES7xAdapter.init(ES7xAdapter.java:54) ~[client-adapter.es7x-1.1.5-jar-with-dependencies.jar:na]</p> <p>A：将canal.adapter-1.1.5\plugin下的client-adapter.es7x-1.1.5-jar-with-dependencies.jar替换为canal-1.1.5-alpha-2版本下的对应文件。</p> <h2 id="验证增量数据同步"><a href="#验证增量数据同步" class="header-anchor">#</a> 验证增量数据同步</h2> <p>MySQL数据库中，新增、修改或删除数据库中es_test表的数据。</p> <div class="language- extra-class"><pre class="language-text"><code>insert `es_test`(`count`,`id`,`name`,`color`) values('11',2,'canal_test2','red');
+</code></pre></div><h1 id="references"><a href="#references" class="header-anchor">#</a> references</h1> <p><a href="https://github.com/alibaba/canal" target="_blank" rel="noopener noreferrer">https://github.com/alibaba/canal<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://help.aliyun.com/zh/es/use-cases/use-canal-to-synchronize-mysql-data-to-alibaba-cloud-elasticsearch" target="_blank" rel="noopener noreferrer">https://help.aliyun.com/zh/es/use-cases/use-canal-to-synchronize-mysql-data-to-alibaba-cloud-elasticsearch<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://weikeqin.com/2018/05/16/canal-notes/" target="_blank" rel="noopener noreferrer">https://weikeqin.com/2018/05/16/canal-notes/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://blog.csdn.net/weixin_44606481/article/details/133344235" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/weixin_44606481/article/details/133344235<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://github.com/alibaba/canal/issues/3466#issuecomment-1049509123" target="_blank" rel="noopener noreferrer">https://github.com/alibaba/canal/issues/3466#issuecomment-1049509123<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://github.com/medcl/elasticsearch-analysis-ik/issues/848" target="_blank" rel="noopener noreferrer">https://github.com/medcl/elasticsearch-analysis-ik/issues/848<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/数据存储/redis.html" class="prev">
+        Redis
+      </a></span> <span class="next"><a href="/mq/rocketmq.html">
+        RocketMQ
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a4d17fdc.js" defer></script><script src="/assets/js/2.d8080fc6.js" defer></script><script src="/assets/js/1.dbeab0c4.js" defer></script><script src="/assets/js/85.700ef9c5.js" defer></script>
+  </body>
+</html>
