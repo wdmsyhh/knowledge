@@ -105,6 +105,7 @@ module.exports = {
                     '数据存储/elasticsearch',
                     '数据存储/monstache',
                     '数据存储/redis',
+                    '数据存储/mysql',
                     '数据存储/使用canal同步mysql到es',
                 ],
             },
