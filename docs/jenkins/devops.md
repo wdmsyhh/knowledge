@@ -12,7 +12,56 @@
 java -jar jenkins.war --httpPort=8080
 ```
 
-参考：
+### 配置
+
+- 设置用户名密码和安装默认插件
+
+- github上生成token并保存
+![alt text](./images/image-2.png)
+![alt text](./images/image-3.png)
+
+- 配置项目回调
+![alt text](./images/image-4.png)
+
+- 新建任务
+![alt text](./images/image-5.png)
+
+- 进入系统配置
+![alt text](./images/image-1.png)
+
+- 添加github服务器
+![alt text](./images/image-6.png)
+![alt text](./images/image-7.png)
+
+- 进入项目配置
+![alt text](./images/image-8.png)
+![alt text](./images/image-9.png)
+![alt text](./images/image-10.png)
+![alt text](./images/image-11.png)
+![alt text](./images/image-12.png)
+
+配置的脚本：
+```shell
+pwd
+cd docs/.vuepress
+docker build -t nginxwithdist .
+# 容器名称
+CONTAINER_NAME="kb"
+# 检查容器是否存在
+if docker ps -a | grep -q "${CONTAINER_NAME}"; then
+    echo "Container ${CONTAINER_NAME} exists. Removing it..."
+    # 停止并删除容器
+    docker stop ${CONTAINER_NAME}
+    docker rm ${CONTAINER_NAME}
+else
+    echo "Container ${CONTAINER_NAME} does not exist."
+fi
+# 重新创建容器
+echo "Creating a new container named ${CONTAINER_NAME}..."
+docker run --name ${CONTAINER_NAME} -p 8000:80 -itd nginxwithdist
+```
+
+#### 参考：
 
 - [Jenkins 系列教程-史上最简单Jenkins教程，教你一天学会使用Jenkins利器](https://blog.csdn.net/qq_32352777/article/details/109267847)
 - [jenkins部署go程序(自动编译部署)](https://juejin.cn/post/6952765925388976165)
