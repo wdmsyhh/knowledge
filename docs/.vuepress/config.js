@@ -60,6 +60,7 @@ module.exports = {
                 children: [
                     'go/readings.md',
                     '/go/install',
+                    'go/问题记录',
                     // {
                     //     title: '侧边栏一',
                     //     children: [
@@ -152,7 +153,8 @@ module.exports = {
             {
                 title: 'Gitlab',
                 children: [
-                    'gitlab/gitlab',
+                    'gitlab/ubuntu',
+                    'gitlab/mac',
                 ],
             },
             {
