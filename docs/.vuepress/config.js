@@ -31,12 +31,13 @@ module.exports = {
         sidebar: [
             'profile',
             {
-                title: '系统开发环境',
+                title: '系统',
                 children: [
                     'system/ubuntu常用命令',
                     'system/ubuntu',
                     'system/ubuntu22',
                     'system/windows',
+                    'system/mac',
                 ],
             },
             'git/git',
@@ -166,6 +167,7 @@ module.exports = {
                     'k8s/minikube',
                     'k8s/tencent',
                     'k8s/helm',
+                    'k8s/kubecm'
                 ],
             },
             {
