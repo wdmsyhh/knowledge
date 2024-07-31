@@ -1,4 +1,12 @@
-# Ubuntu 常用命令
+# Ubuntu 命令
+
+## nohup使用
+
+[https://www.runoob.com/linux/linux-comm-nohup.html](https://www.runoob.com/linux/linux-comm-nohup.html)
+
+```shell
+nohup ./app temp generate_mobile --env=test --tableName=mobile_tmall1 --worker=10 --num=200 --minMobile=13000000000 --maxMobile=13099999999 > print.log 2>&1 &
+```
 
 ## vi或者vim查找关键字的方法
 
