@@ -74,10 +74,17 @@ kubectl get pods
 kubectl get pods -n namespace
 # 删除某个命名空间的 pods
 kubectl delete pods --all -n <namespace>
+
+# 执行命令
+kubectl exec -it muji-go-crm-tmp-job-5795f798bc-9tp7j -- /bin/sh -c "ls"
+
+# 开两个窗口一个执行这个命令，另一个执行 kubectl log -f pod-name 查看日志可以看到输出 aaa
+kubectl exec -it muji-go-crm-tmp-job-5795f798bc-9tp7j -- /bin/sh -c "echo aaa 2>&1 | tee /proc/1/fd/1"
 ```
 
-
+:::tip
 在 Kubernetes 中，当你手动进入 Pod 并执行命令时，这些命令的输出通常不会被重定向到容器的标准输出或标准错误，因此 kubectl logs 无法捕获这些日志。不过，有一些方法可以让你在手动执行命令时，也能将日志输出到 kubectl logs 可以捕获的地方。
+:::
 
 - 使用 kubectl exec 结合重定向
 
@@ -165,3 +172,12 @@ spec:
 kubectl exec -it muji-go-crm-temp-job -- /bin/sh -c "./app temp generate_mobile --env=test --tableName=mobile_tmall1 --worker=10 --num=200 --minMobile=13499999999 --maxMobile=13999999999 2>&1 | tee /proc/1/fd/1"
 ```
 为了确保手动执行命令的日志能够被 kubectl logs 捕获，最简单的方法是使用 kubectl exec 结合重定向，将日志输出到标准输出或标准错误。此外，你也可以通过创建临时 Pod 或使用日志收集工具来实现这一目标。
+
+- 直接在pod中执行并重定向
+
+![](./images/image-111.png)
+
+进入阿里云k8s集群，进入pod执行：
+```shell
+./app temp generate_mobile --env=test --tableName=mobile_tmall1 --worker=10 --num=200 --minMobile=13000000000 --maxMobile=13000000099 2>&1 | tee /proc/1/fd/1
+```
