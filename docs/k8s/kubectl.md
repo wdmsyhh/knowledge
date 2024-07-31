@@ -82,6 +82,22 @@ kubectl exec -it muji-go-crm-tmp-job-5795f798bc-9tp7j -- /bin/sh -c "ls"
 kubectl exec -it muji-go-crm-tmp-job-5795f798bc-9tp7j -- /bin/sh -c "echo aaa 2>&1 | tee /proc/1/fd/1"
 ```
 
+- 本地文件复制到pod中
+
+```shell
+kubectl cp <local-file-or-directory> <namespace>/<pod-name>:<container-path>
+# 例如
+kubectl cp gen_mobile_13000000000_to_13999999999_202407310950.csv muji-go-crm-tmp-job-5795f798bc-9tp7j:/app
+```
+
+- 复制pod种文件到本地
+
+```shell
+kubectl cp <namespace>/<pod-name>:<container-path> <local-file-or-directory>
+# 例如
+kubectl cp muji-go-crm-tmp-job-5795f798bc-9tp7j:/app/gen_mobile_13000000000_to_13999999999_202407310950.csv ./gen_mobile_13000000000_to_13999999999_202407310950.csv
+```
+
 :::tip
 在 Kubernetes 中，当你手动进入 Pod 并执行命令时，这些命令的输出通常不会被重定向到容器的标准输出或标准错误，因此 kubectl logs 无法捕获这些日志。不过，有一些方法可以让你在手动执行命令时，也能将日志输出到 kubectl logs 可以捕获的地方。
 :::
