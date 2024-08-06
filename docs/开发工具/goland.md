@@ -173,3 +173,16 @@ docker run -d  -p 9090:9090 -p 2345:2345 --privileged  web:1.0
 
 访问： `curl localhost:9090/v2`
 ![](./images/goland/debug-2.png)
+
+
+## git使用
+
+- 合并分支
+
+比如想把feat-1合并到master，需要先切到master分支
+![](./images/image-git-1.png)
+
+也可以点击工具栏总的git，选择merge
+![](./images/image-git-2.png)
+
+![](./images/image-git-3.png)
