@@ -115,6 +115,7 @@ module.exports = {
                 title: '消息队列',
                 children: [
                     'mq/rocketmq',
+                    'mq/nsq',
                 ],
             },
             {
