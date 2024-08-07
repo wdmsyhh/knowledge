@@ -140,6 +140,12 @@ module.exports = {
                 ],
             },
             {
+                title: '配置中心',
+                children: [
+                    '配置中心/nacos',
+                ],
+            },
+            {
                 title: 'Nginx',
                 children: [
                     'nginx/reverseProxy',
