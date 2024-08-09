@@ -16,6 +16,8 @@
 
 ![](./images/goland/1.png)
 
+![](./images/goland/4.png)
+
 ## 解决 proto 文件报红问题
 
 ![](./images/goland/2.png)
